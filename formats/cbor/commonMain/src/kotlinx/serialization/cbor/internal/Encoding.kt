@@ -103,11 +103,12 @@ internal open class CborWriter(private val cbor: Cbor, protected val encoder: Cb
             }
         }
 
-        val name = descriptor.getElementName(index)
-        descriptor.getSerialLabel(index)?.let {
-            encoder.encodeNumber(it)
-        } ?: {
-            encoder.encodeString(name)
+        val serialName = descriptor.getElementName(index)
+        val serialLabel = descriptor.getSerialLabel(index)
+        if (cbor.preferSerialLabelsOverNames && serialLabel != null) {
+            encoder.encodeNumber(serialLabel)
+        } else {
+            encoder.encodeString(serialName)
         }
 
         if (cbor.writeValueTags) {
