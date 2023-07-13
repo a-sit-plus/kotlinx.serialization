@@ -9,21 +9,19 @@ class CborSerialLabelTest {
     private val reference = ClassWithSerialLabel(alg = -7)
 
     /**
-     * BF    # map(*)
+     * A1    # map(1)
      *    01 # unsigned(1)
      *    26 # negative(6)
-     *    FF # primitive(*)
      */
-    private val referenceHexLabelString = "bf0126ff"
+    private val referenceHexLabelString = "a10126"
 
     /**
-     * BF           # map(*)
+     * A1           # map(1)
      *    63        # text(3)
      *       616C67 # "alg"
      *    26        # negative(6)
-     *    FF        # primitive(*)
      */
-    private val referenceHexNameString = "bf63616c6726ff"
+    private val referenceHexNameString = "a163616c6726"
 
 
     @Test

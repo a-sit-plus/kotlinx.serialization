@@ -11,13 +11,12 @@ class CborByteStringWrapperTest {
     private val reference = CoseSigned(protectedHeader = ByteStringWrapper(CoseHeader(alg = -7)))
 
     /**
-     * BF             # map(*)
-     *    01          # unsigned(1)
-     *    44          # bytes(4)
-     *       BF0126FF # "\xBF\u0001&\xFF"
-     *    FF          # primitive(*)
+     * A1           # map(1)
+     *    01        # unsigned(1)
+     *    43        # bytes(3)
+     *       A10126 # "\xA1\u0001&"
      */
-    private val referenceHex = "bf0144bf0126ffff"
+    private val referenceHex = "a10143a10126"
 
     @Test
     fun writeReadVerifyCoseSigned() {

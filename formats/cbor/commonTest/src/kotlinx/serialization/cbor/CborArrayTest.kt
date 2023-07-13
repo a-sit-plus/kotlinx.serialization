@@ -26,7 +26,7 @@ class CborArrayTest {
     private val reference2HexString = "c8822663666f6f"
 
     /**
-     * BF                 # map(*)
+     * A1                 # map(1)
      *    65              # text(5)
      *       6172726179   # "array"
      *    C8              # tag(8)
@@ -34,9 +34,8 @@ class CborArrayTest {
      *          26        # negative(6)
      *          63        # text(3)
      *             626172 # "bar"
-     *    FF              # primitive(*)
      */
-    private val reference3HexString = "bf656172726179c8822663626172ff"
+    private val reference3HexString = "a1656172726179c8822663626172"
 
     @Test
     fun writeReadVerifyArraySize1() {

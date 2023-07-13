@@ -54,8 +54,8 @@ class CborTaggedTest {
         d = "Hello World"
     )
 
-    /*
-     * BF                                 # map(*)
+    /**
+     * A4                                 # map(4)
      *    61                              # text(1)
      *       61                           # "a"
      *    CC                              # tag(12)
@@ -76,13 +76,12 @@ class CborTaggedTest {
      *       CC                           # tag(12)
      *          6B                        # text(11)
      *             48656C6C6F20576F726C64 # "Hello World"
-     *    FF                              # primitive(*)
      */
     private val referenceHexString =
-        "bf6161cc1a0fffffffd822616220d8386163d84e42cafe6164d85acc6b48656c6c6f20576f726c64ff"
+        "a46161cc1a0fffffffd822616220d8386163d84e42cafe6164d85acc6b48656c6c6f20576f726c64"
 
-    /*
-     * BF                                 # map(*)
+    /**
+     * A4                                 # map(4)
      *    61                              # text(1)
      *       61                           # "a"
      *    CC                              # tag(12)
@@ -101,12 +100,11 @@ class CborTaggedTest {
      *       CC                           # tag(12)
      *          6B                        # text(11)
      *             48656C6C6F20576F726C64 # "Hello World"
-     *    FF                              # primitive(*)
      */
-    private val noKeyTags = "bf6161cc1a0fffffff6162206163d84e42cafe6164d85acc6b48656c6c6f20576f726c64ff"
+    private val noKeyTags = "a46161cc1a0fffffff6162206163d84e42cafe6164d85acc6b48656c6c6f20576f726c64"
 
-    /*
-     * BF                           # map(*)
+    /**
+     * A4                           # map(4)
      *    61                        # text(1)
      *       61                     # "a"
      *    1A 0FFFFFFF               # unsigned(268435455)
@@ -123,12 +121,11 @@ class CborTaggedTest {
      *       64                     # "d"
      *    6B                        # text(11)
      *       48656C6C6F20576F726C64 # "Hello World"
-     *    FF                        # primitive(*)
      */
-    private val noValueTags = "bf61611a0fffffffd822616220d838616342cafe61646b48656c6c6f20576f726c64ff"
+    private val noValueTags = "a461611a0fffffffd822616220d838616342cafe61646b48656c6c6f20576f726c64"
 
-    /*
-     * BF                           # map(*)
+    /**
+     * A4                           # map(4)
      *    61                        # text(1)
      *       61                     # "a"
      *    1A 0FFFFFFF               # unsigned(268435455)
@@ -143,10 +140,8 @@ class CborTaggedTest {
      *       64                     # "d"
      *    6B                        # text(11)
      *       48656C6C6F20576F726C64 # "Hello World"
-     *    FF                        # primitive(*)
-     *
      */
-    private val noTags = "bf61611a0fffffff616220616342cafe61646b48656c6c6f20576f726c64ff"
+    private val noTags = "a461611a0fffffff616220616342cafe61646b48656c6c6f20576f726c64"
 
     @Test
     fun writeReadVerifyTaggedClass() {

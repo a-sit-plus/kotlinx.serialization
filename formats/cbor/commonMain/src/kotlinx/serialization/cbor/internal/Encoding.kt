@@ -51,6 +51,12 @@ private class CborMapWriter(cbor: Cbor, encoder: CborEncoder) : CborListWriter(c
     override fun writeBeginToken() = encoder.startMap()
 }
 
+// Serializes complex classes, with the size known in advance
+private class CborDefiniteClassWriter(cbor: Cbor, encoder: CborEncoder, private val size: ULong) : CborWriter(cbor, encoder) {
+    override fun writeBeginToken() = encoder.startMap(this.size)
+    override fun endStructure(descriptor: SerialDescriptor) {}
+}
+
 // Writes all elements consequently, except size - CBOR supports maps and arrays of indefinite length
 private open class CborListWriter(cbor: Cbor, encoder: CborEncoder) : CborWriter(cbor, encoder) {
     override fun writeBeginToken() = encoder.startArray()
@@ -108,6 +114,7 @@ internal open class CborWriter(private val cbor: Cbor, protected val encoder: Cb
         } else when (descriptor.kind) {
             StructureKind.LIST, is PolymorphicKind -> CborListWriter(cbor, encoder)
             StructureKind.MAP -> CborMapWriter(cbor, encoder)
+            StructureKind.CLASS -> CborDefiniteClassWriter(cbor, encoder, descriptor.elementNames.count().toULong())
             else -> CborWriter(cbor, encoder)
         }
         writer.writeBeginToken()
@@ -177,6 +184,12 @@ internal class CborEncoder(private val output: ByteArrayOutput) {
     }
 
     fun startMap() = output.write(BEGIN_MAP)
+    fun startMap(size: ULong) {
+        val encodedNumber = composePositive(size)
+        encodedNumber[0] = encodedNumber[0] or HEADER_MAP.toUByte().toByte()
+        encodedNumber.forEach { writeByte(it.toUByte().toInt()) }
+    }
+
     fun end() = output.write(BREAK)
 
     fun encodeNull() = output.write(NULL)
