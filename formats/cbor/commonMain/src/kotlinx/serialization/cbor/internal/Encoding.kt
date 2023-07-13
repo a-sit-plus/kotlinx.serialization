@@ -55,7 +55,29 @@ private class CborMapWriter(cbor: Cbor, encoder: CborEncoder) : CborListWriter(c
 private open class CborListWriter(cbor: Cbor, encoder: CborEncoder) : CborWriter(cbor, encoder) {
     override fun writeBeginToken() = encoder.startArray()
 
-    override fun encodeElement(descriptor: SerialDescriptor, index: Int): Boolean = true
+    override fun encodeElement(descriptor: SerialDescriptor, index: Int): Boolean {
+        encodeByteArrayAsByteString = descriptor.isByteString(index)
+        return true
+    }
+}
+
+// Writes all elements consequently, and also the size, known by the annotation @CborArray
+private class CborDefiniteListWriter(
+    cbor: Cbor,
+    encoder: CborEncoder,
+    private val size: ULong,
+    private val tags: ULongArray?
+) : CborListWriter(cbor, encoder) {
+    override fun writeBeginToken() {
+        tags?.forEach { tag ->
+            val encodedTag = encoder.composePositive(tag)
+            encodedTag[0] = encodedTag[0] or HEADER_TAG.toUByte().toByte()
+            encodedTag.forEach { encoder.writeByte(it.toUByte().toInt()) }
+        }
+        encoder.startArray(size)
+    }
+
+    override fun endStructure(descriptor: SerialDescriptor) {}
 }
 
 // Writes class as map [fieldName, fieldValue]
@@ -63,7 +85,7 @@ internal open class CborWriter(private val cbor: Cbor, protected val encoder: Cb
     override val serializersModule: SerializersModule
         get() = cbor.serializersModule
 
-    private var encodeByteArrayAsByteString = false
+    protected var encodeByteArrayAsByteString = false
 
     @OptIn(ExperimentalSerializationApi::class)
     override fun <T> encodeSerializableValue(serializer: SerializationStrategy<T>, value: T) {
@@ -81,7 +103,9 @@ internal open class CborWriter(private val cbor: Cbor, protected val encoder: Cb
     //todo: Write size of map or array if known
     @OptIn(ExperimentalSerializationApi::class)
     override fun beginStructure(descriptor: SerialDescriptor): CompositeEncoder {
-        val writer = when (descriptor.kind) {
+        val writer = if (descriptor.hasArrayTag()) {
+            CborDefiniteListWriter(cbor, encoder, descriptor.elementNames.count().toULong(), descriptor.getArrayTags())
+        } else when (descriptor.kind) {
             StructureKind.LIST, is PolymorphicKind -> CborListWriter(cbor, encoder)
             StructureKind.MAP -> CborMapWriter(cbor, encoder)
             else -> CborWriter(cbor, encoder)
@@ -96,11 +120,7 @@ internal open class CborWriter(private val cbor: Cbor, protected val encoder: Cb
         encodeByteArrayAsByteString = descriptor.isByteString(index)
 
         if (cbor.writeKeyTags) {
-            descriptor.getKeyTags(index)?.forEach { tag ->
-                val encodedTag = encoder.composePositive(tag)
-                encodedTag[0] = encodedTag[0] or HEADER_TAG.toUByte().toByte()
-                encodedTag.forEach { encoder.writeByte(it.toUByte().toInt()) }
-            }
+            descriptor.getKeyTags(index)?.forEach { tag -> encodeTag(tag) }
         }
 
         val serialName = descriptor.getElementName(index)
@@ -112,13 +132,15 @@ internal open class CborWriter(private val cbor: Cbor, protected val encoder: Cb
         }
 
         if (cbor.writeValueTags) {
-            descriptor.getValueTags(index)?.forEach { tag ->
-                val encodedTag = encoder.composePositive(tag)
-                encodedTag[0] = encodedTag[0] or HEADER_TAG.toUByte().toByte()
-                encodedTag.forEach { encoder.writeByte(it.toUByte().toInt()) }
-            }
+            descriptor.getValueTags(index)?.forEach { tag -> encodeTag(tag) }
         }
         return true
+    }
+
+    fun encodeTag(tag: ULong) {
+        val encodedTag = encoder.composePositive(tag)
+        encodedTag[0] = encodedTag[0] or HEADER_TAG.toUByte().toByte()
+        encodedTag.forEach { encoder.writeByte(it.toUByte().toInt()) }
     }
 
     override fun encodeString(value: String) = encoder.encodeString(value)
@@ -148,6 +170,12 @@ internal open class CborWriter(private val cbor: Cbor, protected val encoder: Cb
 internal class CborEncoder(private val output: ByteArrayOutput) {
 
     fun startArray() = output.write(BEGIN_ARRAY)
+    fun startArray(size: ULong) {
+        val encodedNumber = composePositive(size)
+        encodedNumber[0] = encodedNumber[0] or HEADER_ARRAY.toUByte().toByte()
+        encodedNumber.forEach { writeByte(it.toUByte().toInt()) }
+    }
+
     fun startMap() = output.write(BEGIN_MAP)
     fun end() = output.write(BREAK)
 
@@ -228,8 +256,21 @@ private open class CborListReader(cbor: Cbor, decoder: CborDecoder) : CborReader
 
     override fun skipBeginToken() = setSize(decoder.startArray(tags))
 
-    override fun decodeElementIndex(descriptor: SerialDescriptor) =
-        if (!finiteMode && decoder.isEnd() || (finiteMode && ind >= size)) CompositeDecoder.DECODE_DONE else ind++
+    override fun decodeElementIndex(descriptor: SerialDescriptor): Int {
+        return if (!finiteMode && decoder.isEnd() || (finiteMode && ind >= size)) CompositeDecoder.DECODE_DONE else
+            ind++.also {
+                decodeByteArrayAsByteString = descriptor.isByteString(it)
+            }
+    }
+}
+
+private class CborDefiniteListReader(
+    cbor: Cbor,
+    decoder: CborDecoder,
+    private val expectedSize: ULong,
+    private val tag: ULongArray?
+) : CborListReader(cbor, decoder) {
+
 }
 
 internal open class CborReader(private val cbor: Cbor, protected val decoder: CborDecoder) : AbstractDecoder() {
@@ -240,7 +281,7 @@ internal open class CborReader(private val cbor: Cbor, protected val decoder: Cb
         private set
     private var readProperties: Int = 0
 
-    private var decodeByteArrayAsByteString = false
+    protected var decodeByteArrayAsByteString = false
     protected var tags: ULongArray? = null
 
     protected fun setSize(size: Int) {
@@ -257,7 +298,9 @@ internal open class CborReader(private val cbor: Cbor, protected val decoder: Cb
 
     @OptIn(ExperimentalSerializationApi::class)
     override fun beginStructure(descriptor: SerialDescriptor): CompositeDecoder {
-        val re = when (descriptor.kind) {
+        val re = if (descriptor.hasArrayTag()) {
+            CborDefiniteListReader(cbor, decoder, descriptor.elementNames.count().toULong(), descriptor.getArrayTags())
+        } else when (descriptor.kind) {
             StructureKind.LIST, is PolymorphicKind -> CborListReader(cbor, decoder)
             StructureKind.MAP -> CborMapReader(cbor, decoder)
             else -> CborReader(cbor, decoder)
@@ -749,6 +792,16 @@ private fun SerialDescriptor.getSerialLabel(index: Int): Long? {
 @OptIn(ExperimentalSerializationApi::class)
 private fun SerialDescriptor.getElementNameForSerialLabel(label: Long): String? {
     return elementNames.firstOrNull { getSerialLabel(getElementIndex(it)) == label }
+}
+
+@OptIn(ExperimentalSerializationApi::class)
+private fun SerialDescriptor.getArrayTags(): ULongArray? {
+    return annotations.filterIsInstance<CborArray>().firstOrNull()?.tag
+}
+
+@OptIn(ExperimentalSerializationApi::class)
+private fun SerialDescriptor.hasArrayTag(): Boolean {
+    return annotations.filterIsInstance<CborArray>().isNotEmpty()
 }
 
 private val normalizeBaseBits = SINGLE_PRECISION_NORMALIZE_BASE.toBits()
