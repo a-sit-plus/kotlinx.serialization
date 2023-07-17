@@ -46,7 +46,15 @@ public sealed class Cbor(
 ) : BinaryFormat {
 
     /**
-     * The default instance of [Cbor]
+     * The default instance of [Cbor], with the following behavior. It ...
+     * - does not encode defaults (see [encodeDefaults])
+     * - does not ignore unknown keys (see [ignoreUnknownKeys])
+     * - does write key tags (see [writeKeyTags])
+     * - does write value tags (see [writeValueTags])
+     * - does verify key tags (see [verifyKeyTags])
+     * - does verify value tags (see [verifyValueTags])
+     * - does prefer serial labels over names (see [preferSerialLabelsOverNames])
+     * - has an empty serializers module (see [EmptySerializersModule])
      */
     public companion object Default : Cbor(false, false, true, true, true, true, true, EmptySerializersModule())
 
