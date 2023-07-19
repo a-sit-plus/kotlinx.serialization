@@ -39,7 +39,7 @@ public sealed class Cbor(
     internal val writeValueTags: Boolean,
     internal val verifyKeyTags: Boolean,
     internal val verifyValueTags: Boolean,
-    internal val encodeNullProperties: Boolean,
+    internal val explicitNulls: Boolean,
     internal val writeDefiniteLengths: Boolean,
     override val serializersModule: SerializersModule
 ) : BinaryFormat {
@@ -53,7 +53,7 @@ public sealed class Cbor(
         val output = ByteArrayOutput()
         val dumper = CborWriter(this, CborEncoder(output))
         dumper.encodeSerializableValue(serializer, value)
-        dumper.root.encode()
+        dumper.encode()
         return output.toByteArray()
 
     }
@@ -103,7 +103,7 @@ public fun Cbor(from: Cbor = Cbor, builderAction: CborBuilder.() -> Unit): Cbor 
         builder.writeValueTags,
         builder.verifyKeyTags,
         builder.verifyValueTags,
-        builder.encodeNullProperties,
+        builder.explicitNulls,
         builder.writeDefiniteLengths,
         builder.serializersModule
     )
@@ -150,7 +150,7 @@ public class CborBuilder internal constructor(cbor: Cbor) {
     /**
      * Specifies whether `null` values should be encoded for nullable properties
      */
-    public var encodeNullProperties: Boolean = cbor.encodeNullProperties
+    public var explicitNulls: Boolean = cbor.explicitNulls
 
     /**
      * specifies whether structures (maps, object, lists, etc.) should be encoded using definite length encoding

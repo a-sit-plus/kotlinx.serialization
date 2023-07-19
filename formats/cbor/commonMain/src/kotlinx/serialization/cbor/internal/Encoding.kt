@@ -67,7 +67,7 @@ internal open class CborWriter(private val cbor: Cbor, protected val encoder: Cb
 
         fun encode() {
             val childNodes =
-                if (!cbor.encodeNullProperties && (descriptor?.kind is StructureKind.CLASS || descriptor?.kind is StructureKind.OBJECT)) {
+                if (!cbor.explicitNulls && (descriptor?.kind is StructureKind.CLASS || descriptor?.kind is StructureKind.OBJECT)) {
                     children.filterNot { (it.data as ByteArray?)?.contentEquals(byteArrayOf(NULL.toByte())) == true }
                 } else children
 
@@ -131,7 +131,9 @@ internal open class CborWriter(private val cbor: Cbor, protected val encoder: Cb
 
 
     private var currentNode = Node(null, null, null, -1, null)
-    val root: Node get() = currentNode
+    fun encode() {
+        currentNode.encode()
+    }
 
 
     override val serializersModule: SerializersModule
