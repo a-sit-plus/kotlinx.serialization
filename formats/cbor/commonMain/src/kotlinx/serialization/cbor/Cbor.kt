@@ -39,19 +39,17 @@ public sealed class Cbor(
     internal val writeValueTags: Boolean,
     internal val verifyKeyTags: Boolean,
     internal val verifyValueTags: Boolean,
+    internal val encodeNullProperties: Boolean,
+    internal val writeDefiniteLengths: Boolean,
     override val serializersModule: SerializersModule
 ) : BinaryFormat {
 
     /**
      * The default instance of [Cbor]
      */
-    public companion object Default : Cbor(false, false, true, true, true, true, EmptySerializersModule())
+    public companion object Default : Cbor(false, false, true, true, true, true, true, false, EmptySerializersModule())
 
     override fun <T> encodeToByteArray(serializer: SerializationStrategy<T>, value: T): ByteArray {
-        // val tree = CborTree(this).pass1Accumulate(serializer, value)
-        //    tree.pass2PruneNulls()
-        // println(tree)
-
         val output = ByteArrayOutput()
         val dumper = CborWriter(this, CborEncoder(output))
         dumper.encodeSerializableValue(serializer, value)
@@ -74,6 +72,8 @@ private class CborImpl(
     writeValueTags: Boolean,
     verifyKeyTags: Boolean,
     verifyValueTags: Boolean,
+    encodeNullProperties: Boolean,
+    writeDefiniteLengths: Boolean,
     serializersModule: SerializersModule
 ) :
     Cbor(
@@ -83,6 +83,8 @@ private class CborImpl(
         writeValueTags,
         verifyKeyTags,
         verifyValueTags,
+        encodeNullProperties,
+        writeDefiniteLengths,
         serializersModule
     )
 
@@ -101,6 +103,8 @@ public fun Cbor(from: Cbor = Cbor, builderAction: CborBuilder.() -> Unit): Cbor 
         builder.writeValueTags,
         builder.verifyKeyTags,
         builder.verifyValueTags,
+        builder.encodeNullProperties,
+        builder.writeDefiniteLengths,
         builder.serializersModule
     )
 }
@@ -142,6 +146,16 @@ public class CborBuilder internal constructor(cbor: Cbor) {
      * Specifies whether tags preceding values should be matched against the [ValueTags] annotation during the deserialization process
      */
     public var verifyValueTags: Boolean = cbor.verifyValueTags
+
+    /**
+     * Specifies whether `null` values should be encoded for nullable properties
+     */
+    public var encodeNullProperties: Boolean = cbor.encodeNullProperties
+
+    /**
+     * specifies whether structures (maps, object, lists, etc.) should be encoded using definite length encoding
+     */
+    public var writeDefiniteLengths: Boolean = cbor.writeDefiniteLengths
 
     /**
      * Module with contextual and polymorphic serializers to be used in the resulting [Cbor] instance.

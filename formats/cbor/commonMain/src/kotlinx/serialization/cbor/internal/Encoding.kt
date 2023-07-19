@@ -67,24 +67,35 @@ internal open class CborWriter(private val cbor: Cbor, protected val encoder: Cb
 
         fun encode() {
             val childNodes =
-                if (descriptor?.kind is StructureKind.CLASS ||descriptor?.kind is StructureKind.OBJECT) {
+                if (!cbor.encodeNullProperties && (descriptor?.kind is StructureKind.CLASS || descriptor?.kind is StructureKind.OBJECT)) {
                     children.filterNot { (it.data as ByteArray?)?.contentEquals(byteArrayOf(NULL.toByte())) == true }
                 } else children
+
             encodeElementPreamble()
+
             if (parent?.descriptor?.isByteString(index) != true) {
                 if (children.isNotEmpty()) { //TODO: base this on structurekind not on emptyiness
                     if (descriptor != null)
                         when (descriptor.kind) {
-                            StructureKind.LIST, is PolymorphicKind -> encoder.startArray(childNodes.size.toULong())
-                            is StructureKind.MAP -> encoder.startMap((childNodes.size / 2).toULong())
-                            else -> encoder.startMap(childNodes.size.toULong())
+                            StructureKind.LIST, is PolymorphicKind -> {
+                                if (cbor.writeDefiniteLengths) encoder.startArray(childNodes.size.toULong())
+                                else encoder.startArray()
+                            }
+
+                            is StructureKind.MAP -> {
+                                if (cbor.writeDefiniteLengths) encoder.startMap((childNodes.size / 2).toULong()) else encoder.startMap()
+                            }
+
+                            else -> {
+                                if (cbor.writeDefiniteLengths) encoder.startMap(childNodes.size.toULong()) else encoder.startMap()
+                            }
                         }
 
 
                 }
 
                 childNodes.forEach { it.encode() }
-                //if (children.isNotEmpty() && descriptor != null) encoder.end()
+                if (children.isNotEmpty() && descriptor != null && !cbor.writeDefiniteLengths) encoder.end()
 
             }
             //byteStrings are encoded into the data already, as are primitives
