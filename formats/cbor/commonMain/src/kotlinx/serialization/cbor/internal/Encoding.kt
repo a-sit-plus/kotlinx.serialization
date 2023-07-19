@@ -95,7 +95,8 @@ internal open class CborWriter(private val cbor: Cbor, protected val encoder: Cb
 
     @OptIn(ExperimentalSerializationApi::class)
     override fun <T> encodeSerializableValue(serializer: SerializationStrategy<T>, value: T) {
-        if (encodeByteArrayAsByteString && serializer.descriptor == ByteArraySerializer().descriptor) {
+        if ((encodeByteArrayAsByteString || cbor.alwaysUseByteString)
+            && serializer.descriptor == ByteArraySerializer().descriptor) {
             encoder.encodeByteString(value as ByteArray)
         } else {
             super.encodeSerializableValue(serializer, value)
@@ -388,8 +389,8 @@ internal open class CborReader(private val cbor: Cbor, protected val decoder: Cb
 
     @OptIn(ExperimentalSerializationApi::class)
     override fun <T> decodeSerializableValue(deserializer: DeserializationStrategy<T>): T {
-
-        return if (decodeByteArrayAsByteString && deserializer.descriptor == ByteArraySerializer().descriptor) {
+        return if ((decodeByteArrayAsByteString || cbor.alwaysUseByteString)
+            && deserializer.descriptor == ByteArraySerializer().descriptor) {
             @Suppress("UNCHECKED_CAST")
             decoder.nextByteString(tags) as T
         } else {
