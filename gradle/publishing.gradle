@@ -94,9 +94,6 @@ afterEvaluate {
 
 publishing {
     repositories {
-        maven {  url = new java.io.File(rootProject.projectDir.absolutePath+"/repo")
-            name "local"
-        }
         PublishingKt.configureMavenPublication(delegate, project)
     }
 }
