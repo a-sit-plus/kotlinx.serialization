@@ -31,8 +31,8 @@ project(':kotlinx-serialization-hocon').projectDir = file('./formats/hocon')
 include ':kotlinx-serialization-properties'
 project(':kotlinx-serialization-properties').projectDir = file('./formats/properties')
 
-include ':benchmark'
-project(':benchmark').projectDir = file('./benchmark')
+//include ':benchmark'
+//project(':benchmark').projectDir = file('./benchmark')
 
 include ':guide'
 project(':guide').projectDir = file('./guide')

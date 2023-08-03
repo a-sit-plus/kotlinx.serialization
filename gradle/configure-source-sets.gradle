@@ -3,14 +3,18 @@
  */
 
 kotlin {
+
+        jvmToolchain(11)
+
     jvm {
         withJava()
         configure([compilations.main, compilations.test]) {
             kotlinOptions {
-                jvmTarget = '1.8'
+                jvmTarget = '11'
             }
         }
     }
+
 
     js {
         nodejs {
@@ -126,3 +130,4 @@ kotlin {
         }
     }
 }
+
