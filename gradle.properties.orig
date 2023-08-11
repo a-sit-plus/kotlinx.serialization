@@ -3,7 +3,11 @@
 #
 
 group=org.jetbrains.kotlinx
+<<<<<<< HEAD
+version=1.5.3-SNAPSHOT
+=======
 version=1.6.0-SNAPSHOT
+>>>>>>> upstream/dev
 
 kotlin.version=1.9.0
 
