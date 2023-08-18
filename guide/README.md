@@ -1,1 +1,0 @@
-Example files for the [Kotlin Serialization Guide](../docs/serialization-guide.md).
