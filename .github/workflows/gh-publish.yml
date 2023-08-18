@@ -1,0 +1,40 @@
+name: Publish Dry Run
+on: workflow_dispatch
+permissions:
+  contents: read
+  packages: write
+  id-token: write
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+      - name: Build
+        uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
+        with:
+          arguments: -Pnative.deploy=true build
+  
+      - name: Package
+        uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
+        with:
+          arguments: -Pnative.deploy=true publishAllPublicationsToLocalRepository
+      # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
+      # the publishing section of your build.gradle
+      - name: Push Maven Artefacts
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source_file: 'repo'
+          destination_repo: 'a-sit-plus/kotlinx.serialization'
+          destination_branch: 'mvn'
+          user_email: 'bernd.pruenster@a-sit.at'
+          user_name: 'JesusMcCloud'
+          commit_message: 'Maven Release'
