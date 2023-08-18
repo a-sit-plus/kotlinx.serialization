@@ -1,4 +1,4 @@
-name: Publish Dry Run
+name: Publish to GitHub
 on: workflow_dispatch
 permissions:
   contents: read
