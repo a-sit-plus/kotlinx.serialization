@@ -1,0 +1,143 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-json-okio/1.6.0-SNAPSHOT/kotlinx-serialization-json-okio-1.6.0-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-json-okio",
+    "version": "1.6.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.6.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "com.squareup.okio",
+          "module": "okio",
+          "version": {
+            "requires": "3.1.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-json-okio.klib",
+          "url": "kotlinx-serialization-json-okio-iosx64-1.6.0-SNAPSHOT.klib",
+          "size": 15693,
+          "sha512": "72d2d0dcf0563d42d9a1a6b5d792e39336aecd7e5ce1fdffe0de39026c7c2351480d550a0dac773db5d98166b570f283b0c3576c81f111aa52b634a9ad3e51d7",
+          "sha256": "ea7b6495d6d1531760c3db74c24d17271c9e80f45668a218b4cb538754b651f4",
+          "sha1": "0066618bb15b3a3811bcbec62b37fa2b23f276aa",
+          "md5": "4a89e5210e5b14d29ae66d2b5bc06bd8"
+        }
+      ]
+    },
+    {
+      "name": "iosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-json-okio-iosx64-1.6.0-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-json-okio-iosx64-1.6.0-SNAPSHOT-sources.jar",
+          "size": 4225,
+          "sha512": "69283b909b2852f8174e5ef5ed5b288a478ce87980324c79bf800bc19b3aeaf113398ca22e4e8ac8299c5f0abbe4469d63b9f294c12e889659681763198e0e00",
+          "sha256": "9728b0f43cfac52ea29b95eda581063d931d8c4e254585a5f010ec029e728697",
+          "sha1": "01c2d3cd35733345c5c9b0a3d3d20f8de1fd4cd6",
+          "md5": "afe1cf472b04904974de1ac0ad99e35e"
+        }
+      ]
+    },
+    {
+      "name": "iosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.6.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "com.squareup.okio",
+          "module": "okio",
+          "version": {
+            "requires": "3.1.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-json-okio-iosx64-1.6.0-SNAPSHOT-metadata.jar",
+          "url": "kotlinx-serialization-json-okio-iosx64-1.6.0-SNAPSHOT-metadata.jar",
+          "size": 261,
+          "sha512": "33b308b0b2ca304e6e949bcb44a7d95a0f672eae58cf0e924e041d91aa4bca2957b0f6ded6d6ff813bc6fdb299e34304b722c3c0fe24d6fd5cada2c92e19fb83",
+          "sha256": "ee0414323957f1c765d95fa08499fa142e70224f160fb4591c4272b9f28ea13d",
+          "sha1": "65ea448dd8271ae092c986e76ef7fb6bb9313f19",
+          "md5": "9a63305ad88257f97ac80a46750efb7c"
+        }
+      ]
+    }
+  ]
+}

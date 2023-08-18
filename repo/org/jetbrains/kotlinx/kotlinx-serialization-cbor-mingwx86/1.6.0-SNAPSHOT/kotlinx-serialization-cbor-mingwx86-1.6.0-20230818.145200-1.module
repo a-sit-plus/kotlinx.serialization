@@ -1,0 +1,78 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-cbor/1.6.0-SNAPSHOT/kotlinx-serialization-cbor-1.6.0-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-cbor",
+    "version": "1.6.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "mingwX86ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "mingw_x86",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-cbor.klib",
+          "url": "kotlinx-serialization-cbor-mingwx86-1.6.0-SNAPSHOT.klib",
+          "size": 86714,
+          "sha512": "73c2e628e0a85d9f988fdb37a48cdfa93c8a6ae54aea263656984447f1d09b4f8a5aa69b5cb791d70848225c3c58014eedb85a1c5009d094097cbfad4ff2e2be",
+          "sha256": "a76f9df06280b78755653fb6e192a36726351d1b60a0f3e57eeb95a8ba608f93",
+          "sha1": "ddfbc654a0168b322608bdbc6b22f263f0cdd029",
+          "md5": "6389bd8bd2e323f7d417f4671a86b10d"
+        }
+      ]
+    },
+    {
+      "name": "mingwX86SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "mingw_x86",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-cbor-mingwx86-1.6.0-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-cbor-mingwx86-1.6.0-SNAPSHOT-sources.jar",
+          "size": 16435,
+          "sha512": "826f0a085a07e9b8ae76dbb73b534140539ec5829964a46dad78baad71ed146d517b1a41e7c2221b66c79d41e75380236179f8050b9b611583bc52540200c3b5",
+          "sha256": "bee65713d03f075601ee5ecc9b7605c684bc6c12cc77caaff28786a0724ece25",
+          "sha1": "9238164915194e2d68f4fbc95967123362a232ac",
+          "md5": "1914c2244541c5af3415b21d581ebc55"
+        }
+      ]
+    }
+  ]
+}

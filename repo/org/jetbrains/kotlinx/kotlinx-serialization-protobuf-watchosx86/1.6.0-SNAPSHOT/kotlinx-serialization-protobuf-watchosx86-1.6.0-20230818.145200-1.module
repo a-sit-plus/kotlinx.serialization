@@ -1,0 +1,115 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-protobuf/1.6.0-SNAPSHOT/kotlinx-serialization-protobuf-1.6.0-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-protobuf",
+    "version": "1.6.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "watchosX86ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_x86",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-protobuf.klib",
+          "url": "kotlinx-serialization-protobuf-watchosx86-1.6.0-SNAPSHOT.klib",
+          "size": 120310,
+          "sha512": "41dc43215db3b07b32ae5592e85875146894c39462bf37582ef6d5806c4cb1c49c0fcb3fa89c6c6edaed5ad67c44e0dd422a5b859df4d39556326cf5fd58b33f",
+          "sha256": "a1686c26e6f474f22c03bd4434ee43156e61194b98e0da3f215a35e3b0f2fb92",
+          "sha1": "f1c13610950110be90348a4a2bb9143ccc351a88",
+          "md5": "7b4bf5da994ab2e48867191995799448"
+        }
+      ]
+    },
+    {
+      "name": "watchosX86SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_x86",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-protobuf-watchosx86-1.6.0-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-protobuf-watchosx86-1.6.0-SNAPSHOT-sources.jar",
+          "size": 28577,
+          "sha512": "57f751425cedd7f474c3b7a7f9d0e57c449b7ace8b7cdad976e71480ac29bdd0708eed515511bb1ae44b634353d87c05166c410cfb86d121fb36331c599c421b",
+          "sha256": "4b5c6ca97b4c62ee4e909132b80d1c9f487ec4ddd08b3a0014ac19e49cff28bd",
+          "sha1": "096572e14d25cd2bca86b475346262d9be242407",
+          "md5": "7cfed7b824307d147483c6794f150ea6"
+        }
+      ]
+    },
+    {
+      "name": "watchosX86MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_x86",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-protobuf-watchosx86-1.6.0-SNAPSHOT-metadata.jar",
+          "url": "kotlinx-serialization-protobuf-watchosx86-1.6.0-SNAPSHOT-metadata.jar",
+          "size": 261,
+          "sha512": "c45af396fa4363ddb81fb4847d6560fe0f13ab40db9eb8c5cbfeba50d9f297e84c59a12c2ca0036408a72d019a83488ae11d344ed06abcbdfbba5f1b1d09388c",
+          "sha256": "5e679be115bbc330e26cff270e963a2e06d28299084875e1ad6a035f2297914f",
+          "sha1": "84eaf880b8ad42e109ea39d7da811c27347bdbce",
+          "md5": "5e32f9aeadd475ae8638288981f0427d"
+        }
+      ]
+    }
+  ]
+}

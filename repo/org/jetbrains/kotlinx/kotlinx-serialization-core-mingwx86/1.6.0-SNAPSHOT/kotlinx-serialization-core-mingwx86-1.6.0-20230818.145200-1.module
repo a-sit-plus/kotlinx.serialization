@@ -1,0 +1,71 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-core/1.6.0-SNAPSHOT/kotlinx-serialization-core-1.6.0-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-core",
+    "version": "1.6.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "mingwX86ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "mingw_x86",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-core.klib",
+          "url": "kotlinx-serialization-core-mingwx86-1.6.0-SNAPSHOT.klib",
+          "size": 282806,
+          "sha512": "3d6cc011b56df5627ae052703a84c6a68400995f367a3f96fffab76e18bfc4a0cc03d1d459926e4d521ffeb973d4b5edf24f9c140b41b854ba2011c427b1e977",
+          "sha256": "3823515104a761deef7551e7a8d748b539d4038d660f2f64866bf761ca7d45a5",
+          "sha1": "883c3d23440ae3aed066570e474ecb68d55232fe",
+          "md5": "91a7f01ba9a0fc9c43e310a3fe12d5b6"
+        }
+      ]
+    },
+    {
+      "name": "mingwX86SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "mingw_x86",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-core-mingwx86-1.6.0-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-core-mingwx86-1.6.0-SNAPSHOT-sources.jar",
+          "size": 98744,
+          "sha512": "9b95c76e30bb8ecd501e72c05b4a7fecb351ed396654d6abc4944518c7a141faf89952cc3335e885c8eadb19a03e9e6abe5b7ee15d6c3be159307b42fc386cab",
+          "sha256": "7b13559e42f741cfd0edfe3accc84610b2743d081de6ca2a68fdb65bd1cc4b95",
+          "sha1": "4057cd6951920634815ee921e2ef63e2b9534fd1",
+          "md5": "388393a5b3bfd3ade0a928af9435f9fa"
+        }
+      ]
+    }
+  ]
+}

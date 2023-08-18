@@ -1,0 +1,101 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-core/1.6.0-SNAPSHOT/kotlinx-serialization-core-1.6.0-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-core",
+    "version": "1.6.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "tvosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-core.klib",
+          "url": "kotlinx-serialization-core-tvosarm64-1.6.0-SNAPSHOT.klib",
+          "size": 282813,
+          "sha512": "38b42f85fe4636de54991263dec2a92aa715e2cba43cde1aecda88a3d17547fea12602181e96622a69875a0728adc51bb7a2d22b59f637b5c781bf4099516322",
+          "sha256": "b3865f17f29ef2c2860b5c516415163a4a21236c433ba1d72ef2b2bf951f0e34",
+          "sha1": "be8bb4bbf565a003205fefd911d0bf2cb9bbdfe7",
+          "md5": "a470a9def6bf1680cecdd7532cc1b2d9"
+        }
+      ]
+    },
+    {
+      "name": "tvosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-core-tvosarm64-1.6.0-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-core-tvosarm64-1.6.0-SNAPSHOT-sources.jar",
+          "size": 98744,
+          "sha512": "9b95c76e30bb8ecd501e72c05b4a7fecb351ed396654d6abc4944518c7a141faf89952cc3335e885c8eadb19a03e9e6abe5b7ee15d6c3be159307b42fc386cab",
+          "sha256": "7b13559e42f741cfd0edfe3accc84610b2743d081de6ca2a68fdb65bd1cc4b95",
+          "sha1": "4057cd6951920634815ee921e2ef63e2b9534fd1",
+          "md5": "388393a5b3bfd3ade0a928af9435f9fa"
+        }
+      ]
+    },
+    {
+      "name": "tvosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-core-tvosarm64-1.6.0-SNAPSHOT-metadata.jar",
+          "url": "kotlinx-serialization-core-tvosarm64-1.6.0-SNAPSHOT-metadata.jar",
+          "size": 261,
+          "sha512": "cf9ef5990f3c3f04b3153e0acd09b83759984d76f73a67cc301eff5aad9b6ae9e8667e40bd4acb41f279483095ac1ae3209f66306f2cc13b2835a9bca2a3efa2",
+          "sha256": "73b6af3b0597b4c22a340711c54cc3d7e06e1bb484e0e97e7977bc7574ed660b",
+          "sha1": "8c314f28bf124e63e6d42c386ff476ed793b4238",
+          "md5": "12f1e51ee2b405675d23997d16c614a1"
+        }
+      ]
+    }
+  ]
+}

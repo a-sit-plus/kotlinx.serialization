@@ -1,0 +1,115 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-protobuf/1.6.0-SNAPSHOT/kotlinx-serialization-protobuf-1.6.0-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-protobuf",
+    "version": "1.6.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-protobuf.klib",
+          "url": "kotlinx-serialization-protobuf-iosx64-1.6.0-SNAPSHOT.klib",
+          "size": 120275,
+          "sha512": "c277ecfd52c78f7e3cb257a4f8e622169c322bed925aa3a841926a8561acf37037816a300ce607665ff1af1684d46ab5c54dbf37156310049ba1213b149164ba",
+          "sha256": "127460065c17a3e7178e37297de118c7340d1e065b1fd57671560cb0bb2dadd2",
+          "sha1": "2ff5f1845f7cab2cd5d6046321500f5a81782529",
+          "md5": "f9a88e7cb5d4c96a34b7a2ca548ff4fb"
+        }
+      ]
+    },
+    {
+      "name": "iosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-protobuf-iosx64-1.6.0-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-protobuf-iosx64-1.6.0-SNAPSHOT-sources.jar",
+          "size": 28577,
+          "sha512": "57f751425cedd7f474c3b7a7f9d0e57c449b7ace8b7cdad976e71480ac29bdd0708eed515511bb1ae44b634353d87c05166c410cfb86d121fb36331c599c421b",
+          "sha256": "4b5c6ca97b4c62ee4e909132b80d1c9f487ec4ddd08b3a0014ac19e49cff28bd",
+          "sha1": "096572e14d25cd2bca86b475346262d9be242407",
+          "md5": "7cfed7b824307d147483c6794f150ea6"
+        }
+      ]
+    },
+    {
+      "name": "iosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-protobuf-iosx64-1.6.0-SNAPSHOT-metadata.jar",
+          "url": "kotlinx-serialization-protobuf-iosx64-1.6.0-SNAPSHOT-metadata.jar",
+          "size": 261,
+          "sha512": "b7a73b08b728a26e796129c1a6cb2de5c526406d8a56c5d955b71191db2218eaf695bd731a8a18857b7716af8137704a62dd5dc21d9700054a48299be658900a",
+          "sha256": "75181d98138cedbed5b4a620e19a5ebc282316803afc12e5ac00b235cdf7ab15",
+          "sha1": "c3a567eb5d3166ec132b1f05669641632f68ea0c",
+          "md5": "4a625cf91fef6c3beb27701e4105b3bd"
+        }
+      ]
+    }
+  ]
+}

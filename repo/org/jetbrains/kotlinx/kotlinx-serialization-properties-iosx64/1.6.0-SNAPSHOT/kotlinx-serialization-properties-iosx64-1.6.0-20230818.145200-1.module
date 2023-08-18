@@ -1,0 +1,115 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-properties/1.6.0-SNAPSHOT/kotlinx-serialization-properties-1.6.0-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-properties",
+    "version": "1.6.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-properties.klib",
+          "url": "kotlinx-serialization-properties-iosx64-1.6.0-SNAPSHOT.klib",
+          "size": 19588,
+          "sha512": "035a9f5995d90f4100527f72ea5c460d05d292fe8f28d5fa0eed2e357e2b557ab444dd0209ca25fa72ecee707ac0db05c5531985b6e97f08136a7c38f1030dcb",
+          "sha256": "04c7e8fa4e313d3b92d1223b47d076a234698debf8303e813b3291e08279edd8",
+          "sha1": "d0706dd2133d6573a0da540d38c159a53335b367",
+          "md5": "20bcc4f6a2661514f96dcae49b1260e8"
+        }
+      ]
+    },
+    {
+      "name": "iosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-properties-iosx64-1.6.0-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-properties-iosx64-1.6.0-SNAPSHOT-sources.jar",
+          "size": 3766,
+          "sha512": "a5bd31251a9c5283b9ee19bfccdab80225e5a9308307d07b0ac81d9950c9c08123c2dab9a208588943b7e7b08c3c9214017a378bc7c89fc0806edba717461b90",
+          "sha256": "6271ba0299d4710db9c9bb890166eb8011dfe605ac60bb35043106e60971e815",
+          "sha1": "1453a245d2574f74898d4f20b6f97b889b303660",
+          "md5": "632184f558a1323015aa2d74c57bc53e"
+        }
+      ]
+    },
+    {
+      "name": "iosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-properties-iosx64-1.6.0-SNAPSHOT-metadata.jar",
+          "url": "kotlinx-serialization-properties-iosx64-1.6.0-SNAPSHOT-metadata.jar",
+          "size": 261,
+          "sha512": "80545b0792a4d401b4d9d3fa777f5aaaf2a5cdc82b6226862e3e002bfb0e43bf78b64ea85d9bbdd09e57318c8fb291c9dcf84417d639f99d761c7606859b0134",
+          "sha256": "c5f2b51b6fee3ae708110ae52d67aac99283e9afd866af2b12c9d2cb1f969263",
+          "sha1": "2cb5477ebf290137c7c96095e4043953210a21c4",
+          "md5": "17e8a6108ae9dc18ae4de61964928261"
+        }
+      ]
+    }
+  ]
+}

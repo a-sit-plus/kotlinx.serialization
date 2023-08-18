@@ -1,0 +1,92 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-json-okio/1.6.0-SNAPSHOT/kotlinx-serialization-json-okio-1.6.0-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-json-okio",
+    "version": "1.6.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "mingwX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "mingw_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.6.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "com.squareup.okio",
+          "module": "okio",
+          "version": {
+            "requires": "3.1.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-json-okio.klib",
+          "url": "kotlinx-serialization-json-okio-mingwx64-1.6.0-SNAPSHOT.klib",
+          "size": 15661,
+          "sha512": "30beb2e6ecca306db8dd31b0cf51f36b2a2dbabf40977ec376c75448e3df5f90f953d39fe1c3ccefe48844aae48863a2cd4429bb16f23c2c8dc1f79164555e09",
+          "sha256": "1eb6c67b4abf49477fba6325e75759b34e457eaafce9d8996cec0b43145ae682",
+          "sha1": "b2852cdbd301cfb6a411bf3da5ff09f75e23d44a",
+          "md5": "355ebe223d9d1ac57ab3cd3a929fe054"
+        }
+      ]
+    },
+    {
+      "name": "mingwX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "mingw_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-json-okio-mingwx64-1.6.0-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-json-okio-mingwx64-1.6.0-SNAPSHOT-sources.jar",
+          "size": 4225,
+          "sha512": "69283b909b2852f8174e5ef5ed5b288a478ce87980324c79bf800bc19b3aeaf113398ca22e4e8ac8299c5f0abbe4469d63b9f294c12e889659681763198e0e00",
+          "sha256": "9728b0f43cfac52ea29b95eda581063d931d8c4e254585a5f010ec029e728697",
+          "sha1": "01c2d3cd35733345c5c9b0a3d3d20f8de1fd4cd6",
+          "md5": "afe1cf472b04904974de1ac0ad99e35e"
+        }
+      ]
+    }
+  ]
+}

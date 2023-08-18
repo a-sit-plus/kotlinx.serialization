@@ -1,0 +1,170 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-json-okio/1.6.0-SNAPSHOT/kotlinx-serialization-json-okio-1.6.0-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-json-okio",
+    "version": "1.6.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-bom",
+          "version": {
+            "requires": "1.6.0-SNAPSHOT"
+          },
+          "attributes": {
+            "org.gradle.category": "platform"
+          },
+          "endorseStrictVersions": true
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.6.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-json-okio-jvm-1.6.0-SNAPSHOT.jar",
+          "url": "kotlinx-serialization-json-okio-jvm-1.6.0-SNAPSHOT.jar",
+          "size": 7084,
+          "sha512": "74c4e758bd56c1a707e20d224f55a8101b66e634798f50db7d1dac1ece2456d3d79502e5f511952cbe5eecf630a3c6c64c10f686a470c8fb0cf7810ac1e0fc29",
+          "sha256": "ec07632f5213f1394084d0b99dcced579f7683d240dd8b0af489c8592e5e7098",
+          "sha1": "1dec9083150fa6f46c7e9f3698ee10e12eb911ee",
+          "md5": "c1bf2a4abe3d1d1d25fc993fd41c0307"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-bom",
+          "version": {
+            "requires": "1.6.0-SNAPSHOT"
+          },
+          "attributes": {
+            "org.gradle.category": "platform"
+          },
+          "endorseStrictVersions": true
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.6.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "com.squareup.okio",
+          "module": "okio",
+          "version": {
+            "requires": "3.1.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-json-okio-jvm-1.6.0-SNAPSHOT.jar",
+          "url": "kotlinx-serialization-json-okio-jvm-1.6.0-SNAPSHOT.jar",
+          "size": 7084,
+          "sha512": "74c4e758bd56c1a707e20d224f55a8101b66e634798f50db7d1dac1ece2456d3d79502e5f511952cbe5eecf630a3c6c64c10f686a470c8fb0cf7810ac1e0fc29",
+          "sha256": "ec07632f5213f1394084d0b99dcced579f7683d240dd8b0af489c8592e5e7098",
+          "sha1": "1dec9083150fa6f46c7e9f3698ee10e12eb911ee",
+          "md5": "c1bf2a4abe3d1d1d25fc993fd41c0307"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-json-okio-jvm-1.6.0-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-json-okio-jvm-1.6.0-SNAPSHOT-sources.jar",
+          "size": 4225,
+          "sha512": "69283b909b2852f8174e5ef5ed5b288a478ce87980324c79bf800bc19b3aeaf113398ca22e4e8ac8299c5f0abbe4469d63b9f294c12e889659681763198e0e00",
+          "sha256": "9728b0f43cfac52ea29b95eda581063d931d8c4e254585a5f010ec029e728697",
+          "sha1": "01c2d3cd35733345c5c9b0a3d3d20f8de1fd4cd6",
+          "md5": "afe1cf472b04904974de1ac0ad99e35e"
+        }
+      ]
+    }
+  ]
+}

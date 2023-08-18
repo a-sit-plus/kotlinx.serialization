@@ -1,0 +1,115 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-json/1.6.0-SNAPSHOT/kotlinx-serialization-json-1.6.0-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-json",
+    "version": "1.6.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-json.klib",
+          "url": "kotlinx-serialization-json-iosx64-1.6.0-SNAPSHOT.klib",
+          "size": 247648,
+          "sha512": "b8eaf8cfca4dfcbd0012aaa74a3bb791e45c6fc54c963ce701828dd81082bc525455328bac13f1e0d3be53eef50a4b82f0b54dc56f653a78a5a086c9f556cc31",
+          "sha256": "35b9250b048dc172cf519add2eb6c51566bf992460df824dbb1bb7cb2cbe5f27",
+          "sha1": "d968e9431562a89ed20b42629be38ec201c893e5",
+          "md5": "0bd4bda2e6c1348779222f1d88857af2"
+        }
+      ]
+    },
+    {
+      "name": "iosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-json-iosx64-1.6.0-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-json-iosx64-1.6.0-SNAPSHOT-sources.jar",
+          "size": 73593,
+          "sha512": "111f3c2443dbb3cb6537b5d9a92597b6c8b2bf9616833587dddfe2e80ccaf151d60b2201e7f535d22204a37cd56b0edde1a979eb6bd80b21f82bcfc03164f876",
+          "sha256": "4b7dd8d46dd54a8f249db397553d290f77b5468477c849d25f8d6c4d52ca7e33",
+          "sha1": "1d13131e61139f51287f933b0583331d3726e9e2",
+          "md5": "bcc17f5e8e9f5b4f6e5d6dd5a816f90c"
+        }
+      ]
+    },
+    {
+      "name": "iosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-json-iosx64-1.6.0-SNAPSHOT-metadata.jar",
+          "url": "kotlinx-serialization-json-iosx64-1.6.0-SNAPSHOT-metadata.jar",
+          "size": 261,
+          "sha512": "1cc77a0ea3a2011438ef4ab404d84b208a74bdf1c45cf5feefc10afa23d9b6a85ce214ecc3d77dd7005cea7e683a0feddd8b1cd12d333f7e68d5811360a5cd38",
+          "sha256": "6209806c68d0ec377d79c4e7dd13d269d1de5f7be091d73794e727156760d8b6",
+          "sha1": "de409a175b065941f66123a0e40d42d46da3216b",
+          "md5": "1548ad577b1d9e5ca38f9b5f608cc2f9"
+        }
+      ]
+    }
+  ]
+}

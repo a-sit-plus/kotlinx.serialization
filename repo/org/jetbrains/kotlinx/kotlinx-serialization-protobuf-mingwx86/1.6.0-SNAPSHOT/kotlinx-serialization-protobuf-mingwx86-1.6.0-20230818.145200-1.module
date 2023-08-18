@@ -1,0 +1,78 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-protobuf/1.6.0-SNAPSHOT/kotlinx-serialization-protobuf-1.6.0-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-protobuf",
+    "version": "1.6.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "mingwX86ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "mingw_x86",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-protobuf.klib",
+          "url": "kotlinx-serialization-protobuf-mingwx86-1.6.0-SNAPSHOT.klib",
+          "size": 120292,
+          "sha512": "30d2b7869e69e4b61693eb36fe9bf2865b3012959cce904a087dc3ad4ca34fd7cf64a9816dc06f93af5ea5536b4596a9c08da1398e670e4717116b105bb7600b",
+          "sha256": "0d7645a314cfc9d95de4243e40021fd0262e3ce7d8ee81efcfc9947e96263016",
+          "sha1": "0c3b3024dfcb11419676e5d0feccabf322883fa4",
+          "md5": "c66e3f14f7e83ae6e6f0f7277c309341"
+        }
+      ]
+    },
+    {
+      "name": "mingwX86SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "mingw_x86",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-protobuf-mingwx86-1.6.0-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-protobuf-mingwx86-1.6.0-SNAPSHOT-sources.jar",
+          "size": 28577,
+          "sha512": "57f751425cedd7f474c3b7a7f9d0e57c449b7ace8b7cdad976e71480ac29bdd0708eed515511bb1ae44b634353d87c05166c410cfb86d121fb36331c599c421b",
+          "sha256": "4b5c6ca97b4c62ee4e909132b80d1c9f487ec4ddd08b3a0014ac19e49cff28bd",
+          "sha1": "096572e14d25cd2bca86b475346262d9be242407",
+          "md5": "7cfed7b824307d147483c6794f150ea6"
+        }
+      ]
+    }
+  ]
+}

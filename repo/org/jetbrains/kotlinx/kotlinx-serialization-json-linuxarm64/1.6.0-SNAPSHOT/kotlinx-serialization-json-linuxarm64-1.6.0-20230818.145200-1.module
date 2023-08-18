@@ -1,0 +1,78 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-json/1.6.0-SNAPSHOT/kotlinx-serialization-json-1.6.0-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-json",
+    "version": "1.6.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "linuxArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "linux_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-json.klib",
+          "url": "kotlinx-serialization-json-linuxarm64-1.6.0-SNAPSHOT.klib",
+          "size": 247682,
+          "sha512": "69abc50f71b01b9db93a99e921409b0cd004940d67ca3935b4f97d9be796504fd5c1973370c6d038f89d73d1d8755c2023c029d899a1167fc5abc7217afb577a",
+          "sha256": "b935603b422110a419dac1ddd0388462694e9f1009a6e81a2a8fcaae3b189334",
+          "sha1": "424faeccb66be0308ed08a482d47cea4a894c5b1",
+          "md5": "d1d19f55f5fb23d2b6a65759c6df0cc5"
+        }
+      ]
+    },
+    {
+      "name": "linuxArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "linux_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-json-linuxarm64-1.6.0-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-json-linuxarm64-1.6.0-SNAPSHOT-sources.jar",
+          "size": 73593,
+          "sha512": "111f3c2443dbb3cb6537b5d9a92597b6c8b2bf9616833587dddfe2e80ccaf151d60b2201e7f535d22204a37cd56b0edde1a979eb6bd80b21f82bcfc03164f876",
+          "sha256": "4b7dd8d46dd54a8f249db397553d290f77b5468477c849d25f8d6c4d52ca7e33",
+          "sha1": "1d13131e61139f51287f933b0583331d3726e9e2",
+          "md5": "bcc17f5e8e9f5b4f6e5d6dd5a816f90c"
+        }
+      ]
+    }
+  ]
+}

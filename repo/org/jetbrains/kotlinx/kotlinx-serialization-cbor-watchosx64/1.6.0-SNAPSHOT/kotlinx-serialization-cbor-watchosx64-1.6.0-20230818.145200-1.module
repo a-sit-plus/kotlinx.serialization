@@ -1,0 +1,115 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-cbor/1.6.0-SNAPSHOT/kotlinx-serialization-cbor-1.6.0-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-cbor",
+    "version": "1.6.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "watchosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-cbor.klib",
+          "url": "kotlinx-serialization-cbor-watchosx64-1.6.0-SNAPSHOT.klib",
+          "size": 86731,
+          "sha512": "a3e0ff996f6d87ad4f55ab2b9b26a86874afed358372a690e09492f7e4b6d27dd2b4edeb35b624f84a9ca399a49077dd56dd2209465ca44c47e22698ee8fd8cf",
+          "sha256": "eca3d75bf1ad4682cb594b4d2860802a8282220ff48246baee9d3dc85206f458",
+          "sha1": "86b748e0062d87bd02ded0d1a39dcdea51c8d399",
+          "md5": "ba25f886f9b803ea6bb9f22125fd1da7"
+        }
+      ]
+    },
+    {
+      "name": "watchosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-cbor-watchosx64-1.6.0-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-cbor-watchosx64-1.6.0-SNAPSHOT-sources.jar",
+          "size": 16435,
+          "sha512": "826f0a085a07e9b8ae76dbb73b534140539ec5829964a46dad78baad71ed146d517b1a41e7c2221b66c79d41e75380236179f8050b9b611583bc52540200c3b5",
+          "sha256": "bee65713d03f075601ee5ecc9b7605c684bc6c12cc77caaff28786a0724ece25",
+          "sha1": "9238164915194e2d68f4fbc95967123362a232ac",
+          "md5": "1914c2244541c5af3415b21d581ebc55"
+        }
+      ]
+    },
+    {
+      "name": "watchosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-cbor-watchosx64-1.6.0-SNAPSHOT-metadata.jar",
+          "url": "kotlinx-serialization-cbor-watchosx64-1.6.0-SNAPSHOT-metadata.jar",
+          "size": 261,
+          "sha512": "33b308b0b2ca304e6e949bcb44a7d95a0f672eae58cf0e924e041d91aa4bca2957b0f6ded6d6ff813bc6fdb299e34304b722c3c0fe24d6fd5cada2c92e19fb83",
+          "sha256": "ee0414323957f1c765d95fa08499fa142e70224f160fb4591c4272b9f28ea13d",
+          "sha1": "65ea448dd8271ae092c986e76ef7fb6bb9313f19",
+          "md5": "9a63305ad88257f97ac80a46750efb7c"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.jetbrains.kotlinx</groupId>
+  <artifactId>kotlinx-serialization-json-watchosarm32</artifactId>
+  <versioning>
+    <latest>1.6.0-SNAPSHOT</latest>
+    <versions>
+      <version>1.6.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20230818150526</lastUpdated>
+  </versioning>
+</metadata>
