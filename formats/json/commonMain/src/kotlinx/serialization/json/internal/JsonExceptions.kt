@@ -46,6 +46,13 @@ internal fun AbstractJsonLexer.throwInvalidFloatingPointDecoded(result: Number):
         hint = specialFlowingValuesHint)
 }
 
+internal fun AbstractJsonLexer.invalidTrailingComma(entity: String = "object"): Nothing {
+    fail("Trailing comma before the end of JSON $entity",
+        position = currentPosition - 1,
+        hint = "Trailing commas are non-complaint JSON and not allowed by default. Use 'allowTrailingCommas = true' in 'Json {}' builder to support them."
+    )
+}
+
 @OptIn(ExperimentalSerializationApi::class)
 internal fun InvalidKeyKindException(keyDescriptor: SerialDescriptor) = JsonEncodingException(
     "Value of type '${keyDescriptor.serialName}' can't be used in JSON as a key in the map. " +
@@ -75,7 +82,7 @@ internal fun UnknownKeyException(key: String, input: String) = JsonDecodingExcep
             "Current input: ${input.minify()}"
 )
 
-private fun CharSequence.minify(offset: Int = -1): CharSequence {
+internal fun CharSequence.minify(offset: Int = -1): CharSequence {
     if (length < 200) return this
     if (offset == -1) {
         val start = this.length - 60

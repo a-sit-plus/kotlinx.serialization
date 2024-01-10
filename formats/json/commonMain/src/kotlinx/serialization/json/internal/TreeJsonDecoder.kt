@@ -15,12 +15,12 @@ import kotlinx.serialization.json.*
 import kotlinx.serialization.modules.*
 import kotlin.jvm.*
 
-@InternalSerializationApi
-public fun <T> Json.readJson(element: JsonElement, deserializer: DeserializationStrategy<T>): T {
+@JsonFriendModuleApi
+public fun <T> readJson(json: Json, element: JsonElement, deserializer: DeserializationStrategy<T>): T {
     val input = when (element) {
-        is JsonObject -> JsonTreeDecoder(this, element)
-        is JsonArray -> JsonTreeListDecoder(this, element)
-        is JsonLiteral, JsonNull -> JsonPrimitiveDecoder(this, element as JsonPrimitive)
+        is JsonObject -> JsonTreeDecoder(json, element)
+        is JsonArray -> JsonTreeListDecoder(json, element)
+        is JsonLiteral, JsonNull -> JsonPrimitiveDecoder(json, element as JsonPrimitive)
     }
     return input.decodeSerializableValue(deserializer)
 }
@@ -91,16 +91,7 @@ private sealed class AbstractJsonTreeDecoder(
     override fun decodeTaggedNotNullMark(tag: String): Boolean = currentElement(tag) !== JsonNull
 
     override fun decodeTaggedBoolean(tag: String): Boolean {
-        val value = getPrimitiveValue(tag)
-        if (!json.configuration.isLenient) {
-            val literal = value.asLiteral("boolean")
-            if (literal.isString) throw JsonDecodingException(
-                -1, "Boolean literal for key '$tag' should be unquoted.\n$lenientHint", currentObject().toString()
-            )
-        }
-        return value.primitive("boolean") {
-            booleanOrNull ?: throw IllegalArgumentException() /* Will be handled by 'primitive' */
-        }
+        return getPrimitiveValue(tag).primitive("boolean", JsonPrimitive::booleanOrNull)
     }
 
     override fun decodeTaggedByte(tag: String) = getPrimitiveValue(tag).primitive("byte") {
@@ -199,7 +190,7 @@ private open class JsonTreeDecoder(
      */
     private fun coerceInputValue(descriptor: SerialDescriptor, index: Int, tag: String): Boolean =
         json.tryCoerceValue(
-            descriptor.getElementDescriptor(index),
+            descriptor, index,
             { currentElement(tag) is JsonNull },
             { (currentElement(tag) as? JsonPrimitive)?.contentOrNull }
         )

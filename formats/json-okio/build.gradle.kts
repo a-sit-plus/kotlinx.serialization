@@ -15,6 +15,12 @@ apply(from = rootProject.file("gradle/configure-source-sets.gradle"))
 
 kotlin {
     sourceSets {
+        configureEach {
+            languageSettings {
+                optIn("kotlinx.serialization.internal.CoreFriendModuleApi")
+                optIn("kotlinx.serialization.json.internal.JsonFriendModuleApi")
+            }
+        }
         val commonMain by getting {
             dependencies {
                 api(project(":kotlinx-serialization-core"))
@@ -41,6 +47,16 @@ tasks.named<DokkaTaskPartial>("dokkaHtmlPartial") {
                     file("dokka/okio.package.list").toURI().toURL()
                 )
             }
+        }
+    }
+}
+
+
+// TODO: Remove this after okio will be updated to the version with 1.9.20 stdlib dependency
+configurations.all {
+    resolutionStrategy.eachDependency {
+        if (requested.name == "kotlin-stdlib-wasm") {
+            useTarget("org.jetbrains.kotlin:kotlin-stdlib-wasm-js:${requested.version}")
         }
     }
 }

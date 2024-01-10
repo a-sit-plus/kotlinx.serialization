@@ -78,7 +78,7 @@ public sealed class Json(
     public final override fun <T> encodeToString(serializer: SerializationStrategy<T>, value: T): String {
         val result = JsonToStringWriter()
         try {
-            encodeByWriter(result, serializer, value)
+            encodeByWriter(this@Json, result, serializer, value)
             return result.toString()
         } finally {
             result.release()
@@ -114,7 +114,7 @@ public sealed class Json(
      * @throws [SerializationException] if the given value cannot be serialized to JSON
      */
     public fun <T> encodeToJsonElement(serializer: SerializationStrategy<T>, value: T): JsonElement {
-        return writeJson(value, serializer)
+        return writeJson(this@Json, value, serializer)
     }
 
     /**
@@ -124,7 +124,7 @@ public sealed class Json(
      * @throws [IllegalArgumentException] if the decoded input cannot be represented as a valid instance of type [T]
      */
     public fun <T> decodeFromJsonElement(deserializer: DeserializationStrategy<T>, element: JsonElement): T {
-        return readJson(element, deserializer)
+        return readJson(this@Json, element, deserializer)
     }
 
     /**
@@ -287,7 +287,7 @@ public class JsonBuilder internal constructor(json: Json) {
     public var prettyPrintIndent: String = json.configuration.prettyPrintIndent
 
     /**
-     * Enables coercing incorrect JSON values to the default property value in the following cases:
+     * Enables coercing incorrect JSON values to the default property value (if exists) in the following cases:
      *   1. JSON value is `null` but the property type is non-nullable.
      *   2. Property type is an enum type, but JSON value contains unknown enum member.
      *
@@ -299,6 +299,8 @@ public class JsonBuilder internal constructor(json: Json) {
      * Switches polymorphic serialization to the default array format.
      * This is an option for legacy JSON format and should not be generally used.
      * `false` by default.
+     *
+     * This option can only be used if [classDiscriminatorMode] in a default [ClassDiscriminatorMode.POLYMORPHIC] state.
      */
     public var useArrayPolymorphism: Boolean = json.configuration.useArrayPolymorphism
 
@@ -307,6 +309,16 @@ public class JsonBuilder internal constructor(json: Json) {
      * "type" by default.
      */
     public var classDiscriminator: String = json.configuration.classDiscriminator
+
+
+    /**
+     * Defines which classes and objects should have class discriminator added to the output.
+     * [ClassDiscriminatorMode.POLYMORPHIC] by default.
+     *
+     * Other modes are generally intended to produce JSON for consumption by third-party libraries,
+     * therefore, this setting does not affect the deserialization process.
+     */
+    public var classDiscriminatorMode: ClassDiscriminatorMode = json.configuration.classDiscriminatorMode
 
     /**
      * Removes JSON specification restriction on
@@ -365,6 +377,16 @@ public class JsonBuilder internal constructor(json: Json) {
     public var decodeEnumsCaseInsensitive: Boolean = json.configuration.decodeEnumsCaseInsensitive
 
     /**
+     * Allows parser to accept trailing (ending) commas in JSON objects and arrays,
+     * making inputs like `[1, 2, 3,]` valid.
+     *
+     * Does not affect encoding.
+     * `false` by default.
+     */
+    @ExperimentalSerializationApi
+    public var allowTrailingComma: Boolean = json.configuration.allowTrailingComma
+
+    /**
      * Module with contextual and polymorphic serializers to be used in the resulting [Json] instance.
      *
      * @see SerializersModule
@@ -375,8 +397,13 @@ public class JsonBuilder internal constructor(json: Json) {
 
     @OptIn(ExperimentalSerializationApi::class)
     internal fun build(): JsonConfiguration {
-        if (useArrayPolymorphism) require(classDiscriminator == defaultDiscriminator) {
-            "Class discriminator should not be specified when array polymorphism is specified"
+        if (useArrayPolymorphism) {
+            require(classDiscriminator == defaultDiscriminator) {
+                "Class discriminator should not be specified when array polymorphism is specified"
+            }
+            require(classDiscriminatorMode == ClassDiscriminatorMode.POLYMORPHIC) {
+                "useArrayPolymorphism option can only be used if classDiscriminatorMode in a default POLYMORPHIC state."
+            }
         }
 
         if (!prettyPrint) {
@@ -396,7 +423,7 @@ public class JsonBuilder internal constructor(json: Json) {
             allowStructuredMapKeys, prettyPrint, explicitNulls, prettyPrintIndent,
             coerceInputValues, useArrayPolymorphism,
             classDiscriminator, allowSpecialFloatingPointValues, useAlternativeNames,
-            namingStrategy, decodeEnumsCaseInsensitive
+            namingStrategy, decodeEnumsCaseInsensitive, allowTrailingComma, classDiscriminatorMode
         )
     }
 }

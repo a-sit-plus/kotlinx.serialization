@@ -4,8 +4,8 @@
 [![JetBrains official project](https://jb.gg/badges/official.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
 [![TeamCity build](https://img.shields.io/teamcity/http/teamcity.jetbrains.com/s/KotlinTools_KotlinxSerialization_Ko.svg)](https://teamcity.jetbrains.com/viewType.html?buildTypeId=KotlinTools_KotlinxSerialization_Ko&guest=1)
-[![Kotlin](https://img.shields.io/badge/kotlin-1.9.0-blue.svg?logo=kotlin)](http://kotlinlang.org)
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlinx/kotlinx-serialization-core/1.6.0-RC)](https://central.sonatype.com/artifact/org.jetbrains.kotlinx/kotlinx-serialization-core/1.6.0-RC)
+[![Kotlin](https://img.shields.io/badge/kotlin-1.9.21-blue.svg?logo=kotlin)](http://kotlinlang.org)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlinx/kotlinx-serialization-core/1.6.2)](https://central.sonatype.com/artifact/org.jetbrains.kotlinx/kotlinx-serialization-core/1.6.2)
 [![KDoc link](https://img.shields.io/badge/API_reference-KDoc-blue)](https://kotlinlang.org/api/kotlinx.serialization/)
 [![Slack channel](https://img.shields.io/badge/chat-slack-blue.svg?logo=slack)](https://kotlinlang.slack.com/messages/serialization/)
 
@@ -23,9 +23,8 @@ Kotlin serialization consists of a compiler plugin, that generates visitor code 
 * [Introduction and references](#introduction-and-references)
 * [Setup](#setup)
   * [Gradle](#gradle)
-    * [Using the `plugins` block](#using-the-plugins-block)
-    * [Using `apply plugin` (the old way)](#using-apply-plugin-the-old-way)
-    * [Dependency on the JSON library](#dependency-on-the-json-library)
+    * [1) Setting up the serialization plugin](#1-setting-up-the-serialization-plugin)
+    * [2) Dependency on the JSON library](#2-dependency-on-the-json-library)
   * [Android](#android)
   * [Multiplatform (Common, JS, Native)](#multiplatform-common-js-native)
   * [Maven](#maven)
@@ -83,17 +82,21 @@ Make sure you have the corresponding Kotlin plugin installed in the IDE, no addi
 
 ### Gradle
 
-#### Using the `plugins` block
+To set up kotlinx.serialization, you have to do two things:
+1) Add the **[serialization plugin](#1-setting-up-the-serialization-plugin)**.
+2) Add the **[serialization library dependency](#2-dependency-on-the-json-library)**.
 
-You can set up the serialization plugin with the Kotlin plugin using 
+#### 1) Setting up the serialization plugin
+
+You can set up the serialization plugin with the Kotlin plugin using the
 [Gradle plugins DSL](https://docs.gradle.org/current/userguide/plugins.html#sec:plugins_block):
 
 Kotlin DSL:
 
 ```kotlin
 plugins {
-    kotlin("jvm") version "1.9.0" // or kotlin("multiplatform") or any other kotlin plugin
-    kotlin("plugin.serialization") version "1.9.0"
+    kotlin("jvm") version "1.9.21" // or kotlin("multiplatform") or any other kotlin plugin
+    kotlin("plugin.serialization") version "1.9.21"
 }
 ```       
 
@@ -101,14 +104,15 @@ Groovy DSL:
 
 ```gradle
 plugins {
-    id 'org.jetbrains.kotlin.multiplatform' version '1.9.0'
-    id 'org.jetbrains.kotlin.plugin.serialization' version '1.9.0'
+    id 'org.jetbrains.kotlin.multiplatform' version '1.9.21'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.9.21'
 }
 ```
 
-> Kotlin versions before 1.4.0 are not supported by the stable release of Kotlin serialization
+> Kotlin versions before 1.4.0 are not supported by the stable release of Kotlin serialization.
 
-#### Using `apply plugin` (the old way)
+<details>
+  <summary>Using <code>apply plugin</code> (the old way)</summary>
 
 First, you have to add the serialization plugin to your classpath as the other [compiler plugins](https://kotlinlang.org/docs/reference/compiler-plugins.html):
 
@@ -119,7 +123,7 @@ buildscript {
     repositories { mavenCentral() }
 
     dependencies {
-        val kotlinVersion = "1.9.0"
+        val kotlinVersion = "1.9.21"
         classpath(kotlin("gradle-plugin", version = kotlinVersion))
         classpath(kotlin("serialization", version = kotlinVersion))
     }
@@ -130,7 +134,7 @@ Groovy DSL:
 
 ```gradle
 buildscript {
-    ext.kotlin_version = '1.9.0'
+    ext.kotlin_version = '1.9.21'
     repositories { mavenCentral() }
 
     dependencies {
@@ -145,10 +149,11 @@ Then you can `apply plugin` (example in Groovy):
 apply plugin: 'kotlin' // or 'kotlin-multiplatform' for multiplatform projects
 apply plugin: 'kotlinx-serialization'
 ```
+</details>
 
-#### Dependency on the JSON library
+#### 2) Dependency on the JSON library
 
-After setting up the plugin one way or another, you have to add a dependency on the serialization library.
+After setting up the plugin, you have to add a dependency on the serialization library.
 Note that while the plugin has version the same as the compiler one, runtime library has different coordinates, repository and versioning.
 
 Kotlin DSL:
@@ -159,7 +164,7 @@ repositories {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0-RC")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
 }
 ```
 
@@ -171,7 +176,7 @@ repositories {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0-RC"
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2"
 }
 ```
 
@@ -261,8 +266,8 @@ Ensure the proper version of Kotlin and serialization version:
 
 ```xml
 <properties>
-    <kotlin.version>1.9.0</kotlin.version>
-    <serialization.version>1.6.0-RC</serialization.version>
+    <kotlin.version>1.9.21</kotlin.version>
+    <serialization.version>1.6.2</serialization.version>
 </properties>
 ```
 

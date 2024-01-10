@@ -106,10 +106,13 @@ internal open class CborWriter(
     @OptIn(ExperimentalSerializationApi::class)
     override fun <T> encodeSerializableValue(serializer: SerializationStrategy<T>, value: T) {
 
-        if ((encodeByteArrayAsByteString || cbor.alwaysUseByteString)
+        if ((encodeByteArrayAsByteString || serializer.descriptor.isInlineByteString() || cbor.alwaysUseByteString)
             && serializer.descriptor == ByteArraySerializer().descriptor
         ) currentToken.data = ByteArrayOutput().apply { encodeByteString(value as ByteArray) }
-        else super.encodeSerializableValue(serializer, value)
+        else {
+            encodeByteArrayAsByteString = encodeByteArrayAsByteString || serializer.descriptor.isInlineByteString()
+            super.encodeSerializableValue(serializer, value)
+        }
     }
 
     override fun shouldEncodeElementDefault(descriptor: SerialDescriptor, index: Int): Boolean = cbor.encodeDefaults
@@ -519,6 +522,7 @@ internal open class CborReader(private val cbor: Cbor, protected val decoder: Cb
             @Suppress("UNCHECKED_CAST")
             decoder.nextByteString(tags) as T
         } else {
+            decodeByteArrayAsByteString = decodeByteArrayAsByteString || deserializer.descriptor.isInlineByteString()
             super.decodeSerializableValue(deserializer)
         }
     }
@@ -953,6 +957,12 @@ private fun Iterable<ByteArray>.flatten(): ByteArray {
 @OptIn(ExperimentalSerializationApi::class)
 private fun SerialDescriptor.isByteString(index: Int): Boolean {
     return kotlin.runCatching { getElementAnnotations(index).find { it is ByteString } != null }.getOrDefault(false)
+}
+
+
+private fun SerialDescriptor.isInlineByteString(): Boolean {
+    // inline item classes should only have 1 item
+    return isInline && isByteString(0)
 }
 
 @OptIn(ExperimentalSerializationApi::class)

@@ -9,6 +9,7 @@ import kotlinx.serialization.*
 import kotlinx.serialization.descriptors.*
 import kotlinx.serialization.internal.*
 import kotlinx.serialization.json.*
+import kotlinx.serialization.modules.*
 import kotlin.jvm.*
 
 @Suppress("UNCHECKED_CAST")
@@ -17,22 +18,37 @@ internal inline fun <T> JsonEncoder.encodePolymorphically(
     value: T,
     ifPolymorphic: (String) -> Unit
 ) {
-    if (serializer !is AbstractPolymorphicSerializer<*> || json.configuration.useArrayPolymorphism) {
+    if (json.configuration.useArrayPolymorphism) {
         serializer.serialize(this, value)
         return
     }
-    val casted = serializer as AbstractPolymorphicSerializer<Any>
-    val baseClassDiscriminator = serializer.descriptor.classDiscriminator(json)
-    val actualSerializer = casted.findPolymorphicSerializer(this, value as Any)
-    validateIfSealed(casted, actualSerializer, baseClassDiscriminator)
-    checkKind(actualSerializer.descriptor.kind)
-    ifPolymorphic(baseClassDiscriminator)
+    val isPolymorphicSerializer = serializer is AbstractPolymorphicSerializer<*>
+    val needDiscriminator =
+        if (isPolymorphicSerializer) {
+            json.configuration.classDiscriminatorMode != ClassDiscriminatorMode.NONE
+        } else {
+            when (json.configuration.classDiscriminatorMode) {
+                ClassDiscriminatorMode.NONE, ClassDiscriminatorMode.POLYMORPHIC /* already handled in isPolymorphicSerializer */ -> false
+                ClassDiscriminatorMode.ALL_JSON_OBJECTS -> serializer.descriptor.kind.let { it == StructureKind.CLASS || it == StructureKind.OBJECT }
+            }
+        }
+    val baseClassDiscriminator = if (needDiscriminator) serializer.descriptor.classDiscriminator(json) else null
+    val actualSerializer: SerializationStrategy<T> = if (isPolymorphicSerializer) {
+        val casted = serializer as AbstractPolymorphicSerializer<Any>
+        requireNotNull(value) { "Value for serializer ${serializer.descriptor} should always be non-null. Please report issue to the kotlinx.serialization tracker." }
+        val actual = casted.findPolymorphicSerializer(this, value)
+        if (baseClassDiscriminator != null) validateIfSealed(serializer, actual, baseClassDiscriminator)
+        checkKind(actual.descriptor.kind)
+        actual as SerializationStrategy<T>
+    } else serializer
+
+    if (baseClassDiscriminator != null) ifPolymorphic(baseClassDiscriminator)
     actualSerializer.serialize(this, value)
 }
 
 private fun validateIfSealed(
     serializer: SerializationStrategy<*>,
-    actualSerializer: SerializationStrategy<Any>,
+    actualSerializer: SerializationStrategy<*>,
     classDiscriminator: String
 ) {
     if (serializer !is SealedClassSerializer<*>) return
@@ -63,20 +79,15 @@ internal fun <T> JsonDecoder.decodeSerializableValuePolymorphic(deserializer: De
     val discriminator = deserializer.descriptor.classDiscriminator(json)
 
     val jsonTree = cast<JsonObject>(decodeJsonElement(), deserializer.descriptor)
-    val type = jsonTree[discriminator]?.jsonPrimitive?.content
-    val actualSerializer = deserializer.findPolymorphicSerializerOrNull(this, type)
-        ?: throwSerializerNotFound(type, jsonTree)
-
+    val type = jsonTree[discriminator]?.jsonPrimitive?.contentOrNull // differentiate between `"type":"null"` and `"type":null`.
     @Suppress("UNCHECKED_CAST")
-    return json.readPolymorphicJson(discriminator, jsonTree, actualSerializer as DeserializationStrategy<T>)
-}
-
-@JvmName("throwSerializerNotFound")
-internal fun throwSerializerNotFound(type: String?, jsonTree: JsonObject): Nothing {
-    val suffix =
-        if (type == null) "missing class discriminator ('null')"
-        else "class discriminator '$type'"
-    throw JsonDecodingException(-1, "Polymorphic serializer was not found for $suffix", jsonTree.toString())
+    val actualSerializer =
+        try {
+            deserializer.findPolymorphicSerializer(this, type)
+        } catch (it: SerializationException) { //  Wrap SerializationException into JsonDecodingException to preserve input
+            throw JsonDecodingException(-1, it.message!!, jsonTree.toString())
+        } as DeserializationStrategy<T>
+    return json.readPolymorphicJson(discriminator, jsonTree, actualSerializer)
 }
 
 internal fun SerialDescriptor.classDiscriminator(json: Json): String {

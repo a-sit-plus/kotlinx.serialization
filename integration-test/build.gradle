@@ -5,9 +5,13 @@ buildscript {
     ext.serialization_version = mainLibVersion
 
     repositories {
-        mavenLocal()
         mavenCentral()
         maven { url "https://cache-redirector.jetbrains.com/maven.pkg.jetbrains.space/kotlin/p/kotlin/dev" }
+        mavenLocal() {
+            mavenContent {
+                snapshotsOnly()
+            }
+        }
     }
 }
 
@@ -19,9 +23,13 @@ plugins {
 }
 
 repositories {
-    mavenLocal()
     mavenCentral()
     maven { url "https://cache-redirector.jetbrains.com/maven.pkg.jetbrains.space/kotlin/p/kotlin/dev" }
+    mavenLocal() {
+        mavenContent {
+            snapshotsOnly()
+        }
+    }
 }
 
 group 'com.example'
@@ -37,19 +45,23 @@ kotlin {
             kotlinOptions {
                 sourceMap = true
                 moduleKind = "umd"
-                metaInfo = true
             }
         }
+    }
+    wasmJs {
+        nodejs()
+    }
+    wasmWasi {
+        nodejs()
     }
     jvm {
         withJava()
     }
-    // For ARM, should be changed to iosArm32 or iosArm64
-    // For Linux, should be changed to e.g. linuxX64
-    // For MacOS, should be changed to e.g. macosX64
-    // For Windows, should be changed to e.g. mingwX64
-    macosX64("macos")
-    linuxX64("linux")
+    macosX64()
+    macosArm64()
+    linuxX64()
+    mingwX64()
+
     sourceSets {
         all {
             languageSettings {
@@ -59,7 +71,7 @@ kotlin {
 
         commonMain {
             dependencies {
-                implementation kotlin('stdlib-common')
+                implementation kotlin('stdlib')
                 implementation "org.jetbrains.kotlinx:kotlinx-serialization-core:$serialization_version"
                 implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:$serialization_version"
                 implementation "org.jetbrains.kotlinx:kotlinx-serialization-protobuf:$serialization_version"
@@ -95,16 +107,38 @@ kotlin {
                 implementation kotlin('test-js')
             }
         }
-        macosMain {
+        wasmJsMain {
             dependencies {
+                api 'org.jetbrains.kotlin:kotlin-stdlib-wasm-js'
             }
         }
-        macosTest {}
-        linuxMain {
-            kotlin.srcDirs = ["src/macosMain/kotlin"]
+        wasmJsTest {
+            dependencies {
+                api 'org.jetbrains.kotlin:kotlin-test-wasm-js'
+            }
         }
-        linuxTest {
-            kotlin.srcDirs = ["src/macosTest/kotlin"]
+        wasmWasiMain {
+            dependencies {
+                api 'org.jetbrains.kotlin:kotlin-stdlib-wasm-wasi'
+            }
+        }
+        wasmWasiTest {
+            dependencies {
+                api 'org.jetbrains.kotlin:kotlin-test-wasm-wasi'
+            }
+        }
+    }
+
+    targets.all {
+        compilations.all {
+            kotlinOptions {
+                freeCompilerArgs += "-Xexpect-actual-classes"
+            }
+        }
+        compilations.main {
+            kotlinOptions {
+                allWarningsAsErrors = true
+            }
         }
     }
 }
@@ -114,3 +148,13 @@ dependencies {
 }
 
 task run dependsOn "check"
+
+rootProject.extensions.findByType(org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension.class).with {
+    // canary nodejs that supports recent Wasm GC changes
+    it.nodeVersion = "21.0.0-v8-canary202309167e82ab1fa2"
+    it.nodeDownloadBaseUrl = "https://nodejs.org/download/v8-canary"
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.targets.js.npm.tasks.KotlinNpmInstallTask).configureEach {
+    args.add("--ignore-engines")
+}

@@ -39,6 +39,10 @@ buildscript {
     ]
     ext.koverEnabled = property('kover.enabled') ?: true
 
+    def noTeamcityInteractionFlag = rootProject.hasProperty("no_teamcity_interaction")
+    def buildSnapshotUPFlag = rootProject.hasProperty("build_snapshot_up")
+    ext.teamcityInteractionDisabled = noTeamcityInteractionFlag || buildSnapshotUPFlag
+
     /*
     * This property group is used to build kotlinx.serialization against Kotlin compiler snapshot.
     * When build_snapshot_train is set to true, kotlin_version property is overridden with kotlin_snapshot_version.
@@ -164,6 +168,13 @@ allprojects {
         mavenLocal()
 
     }
+
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.Kotlin2JsCompile).configureEach {
+        compilerOptions { freeCompilerArgs.add("-Xpartial-linkage-loglevel=ERROR") }
+    }
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinNativeCompile).configureEach {
+        compilerOptions { freeCompilerArgs.add("-Xpartial-linkage-loglevel=ERROR") }
+    }
 }
 
 def unpublishedProjects = ["benchmark", "guide", "kotlinx-serialization-json-tests"] as Set
@@ -240,4 +251,8 @@ apply from: rootProject.file("gradle/benchmark-parsing.gradle")
 
 tasks.named("dokkaHtmlMultiModule") {
     pluginsMapConfiguration.set(["org.jetbrains.dokka.base.DokkaBase": """{ "templatesDir": "${projectDir.toString().replace('\\', '/')}/dokka-templates" }"""])
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.targets.js.npm.tasks.KotlinNpmInstallTask).configureEach {
+    args.add("--ignore-engines")
 }

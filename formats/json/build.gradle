@@ -1,3 +1,5 @@
+import static KotlinVersion.isKotlinVersionAtLeast
+
 /*
  * Copyright 2017-2021 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license.
  */
@@ -19,14 +21,38 @@ tasks.named("koverVerify") {
 }
 
 kotlin {
-
     sourceSets {
+        configureEach {
+            languageSettings {
+                optIn("kotlinx.serialization.internal.CoreFriendModuleApi")
+                optIn("kotlinx.serialization.json.internal.JsonFriendModuleApi")
+            }
+        }
         commonMain {
             dependencies {
                 api project(":kotlinx-serialization-core")
             }
         }
+        jsWasmMain {
+            dependsOn(sourceSets.commonMain)
+        }
+        jsMain {
+            dependsOn(sourceSets.jsWasmMain)
+        }
+        wasmJsMain {
+            dependsOn(sourceSets.jsWasmMain)
+        }
+        wasmWasiMain {
+            dependsOn(sourceSets.jsWasmMain)
+        }
     }
 }
 
 Java9Modularity.configureJava9ModuleInfo(project)
+
+// This task should be disabled because of no need to build and publish intermediate JsWasm sourceset
+tasks.whenTaskAdded { task ->
+    if (task.name == 'compileJsWasmMainKotlinMetadata') {
+        task.enabled = false
+    }
+}
