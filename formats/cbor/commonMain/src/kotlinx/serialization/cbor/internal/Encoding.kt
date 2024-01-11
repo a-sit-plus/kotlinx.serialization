@@ -118,12 +118,11 @@ internal open class CborWriter(
 
         fun encode(output: ByteArrayOutput): ByteArrayOutput {
 
-            parentDescriptor?.let { descriptor ->
-                if (!descriptor.hasArrayTag()) {
-                    if (cbor.writeKeyTags) {
-                        descriptor.getKeyTags(index)?.forEach { output.encodeTag(it) }
-                    }
-                    if ((descriptor.kind !is StructureKind.LIST) && (descriptor.kind !is StructureKind.MAP) && (descriptor.kind !is PolymorphicKind)) {
+            if (parentDescriptor != null) {
+                if (!parentDescriptor.hasArrayTag()) {
+                    if (cbor.writeKeyTags) parentDescriptor.getKeyTags(index)?.forEach { output.encodeTag(it) }
+
+                    if ((parentDescriptor.kind !is StructureKind.LIST) && (parentDescriptor.kind !is StructureKind.MAP) && (parentDescriptor.kind !is PolymorphicKind)) {
                         //indices are put into the name field. we don't want to write those, as it would result in double writes
                         if (cbor.preferCborLabelsOverNames && label != null) {
                             output.encodeNumber(label)
@@ -495,15 +494,6 @@ private open class CborListReader(cbor: Cbor, decoder: CborDecoder) : CborReader
     }
 }
 
-private class CborDefiniteListReader(
-    cbor: Cbor,
-    decoder: CborDecoder,
-    private val expectedSize: ULong,
-    private val tag: ULongArray?
-) : CborListReader(cbor, decoder) {
-
-}
-
 internal open class CborReader(private val cbor: Cbor, protected val decoder: CborDecoder) : AbstractDecoder() {
 
     protected var size = -1
@@ -525,12 +515,12 @@ internal open class CborReader(private val cbor: Cbor, protected val decoder: Cb
     override val serializersModule: SerializersModule
         get() = cbor.serializersModule
 
-    protected open fun skipBeginToken() = setSize(decoder.startMap(tags))
+    protected open fun skipBeginToken() = setSize(decoder.startMap())
 
     @OptIn(ExperimentalSerializationApi::class)
     override fun beginStructure(descriptor: SerialDescriptor): CompositeDecoder {
         val re = if (descriptor.hasArrayTag()) {
-            CborDefiniteListReader(cbor, decoder, descriptor.elementNames.count().toULong(), descriptor.getArrayTags())
+            CborListReader(cbor, decoder)
         } else when (descriptor.kind) {
             StructureKind.LIST, is PolymorphicKind -> CborListReader(cbor, decoder)
             StructureKind.MAP -> CborMapReader(cbor, decoder)
@@ -556,11 +546,7 @@ internal open class CborReader(private val cbor: Cbor, protected val decoder: Cb
                 if (index == CompositeDecoder.UNKNOWN_NAME) {
                     decoder.skipElement(tags)
                 } else {
-                    if (cbor.verifyKeyTags) {
-                        descriptor.getKeyTags(index)?.let { keyTags ->
-                            if (!(keyTags contentEquals tags)) throw CborDecodingException("CBOR tags $tags do not match declared tags $keyTags")
-                        }
-                    }
+                    verifyKeyTags(descriptor, index, tags)
                     knownIndex = index
                     break
                 }
@@ -571,11 +557,7 @@ internal open class CborReader(private val cbor: Cbor, protected val decoder: Cb
             val (elemName, tags) = decodeElementNameWithTags(descriptor)
             readProperties++
             descriptor.getElementIndexOrThrow(elemName).also { index ->
-                if (cbor.verifyKeyTags) {
-                    descriptor.getKeyTags(index)?.let { keyTags ->
-                        if (!(keyTags contentEquals tags)) throw CborDecodingException("CBOR tags $tags do not match declared tags $keyTags")
-                    }
-                }
+                verifyKeyTags(descriptor, index, tags)
             }
         }
 
@@ -584,14 +566,15 @@ internal open class CborReader(private val cbor: Cbor, protected val decoder: Cb
         return index
     }
 
+
     private fun decodeElementNameWithTags(descriptor: SerialDescriptor): Pair<String, ULongArray?> {
         var (elemName, cborLabel, tags) = decoder.nextTaggedStringOrNumber()
         if (elemName == null && cborLabel != null) {
             elemName = descriptor.getElementNameForCborLabel(cborLabel)
-                ?: throw CborDecodingException("CborLabel unknown: $cborLabel")
+                ?: throw CborDecodingException("CborLabel unknown: $cborLabel for $descriptor")
         }
         if (elemName == null) {
-            throw CborDecodingException("Expected (tagged) string or number, got nothing")
+            throw CborDecodingException("Expected (tagged) string or number, got nothing for $descriptor")
         }
         return elemName to tags
     }
@@ -638,6 +621,14 @@ internal open class CborReader(private val cbor: Cbor, protected val decoder: Cb
         enumDescriptor.getElementIndexOrThrow(decoder.nextString(tags))
 
     private fun isDone(): Boolean = !finiteMode && decoder.isEnd() || (finiteMode && readProperties >= size)
+
+    private fun verifyKeyTags(descriptor: SerialDescriptor, index: Int, tags: ULongArray?) {
+        if (cbor.verifyKeyTags) {
+            descriptor.getKeyTags(index)?.let { keyTags ->
+                if (!(keyTags contentEquals tags)) throw CborDecodingException("CBOR tags $tags do not match declared tags $keyTags for $descriptor")
+            }
+        }
+    }
 }
 
 internal class CborDecoder(private val input: ByteArrayInput) {
@@ -759,6 +750,7 @@ internal class CborDecoder(private val input: ByteArrayInput) {
         }
 
         return (if (collectedTags.isEmpty()) null else collectedTags.toULongArray()).also { collected ->
+            //We only want to compare if tags are actually set, otherwise, we don't care
             tags?.let {
                 if (!it.contentEquals(collected)) throw CborDecodingException(
                     "CBOR tags ${
