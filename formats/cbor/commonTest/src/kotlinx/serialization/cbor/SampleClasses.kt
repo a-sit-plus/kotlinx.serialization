@@ -17,7 +17,7 @@ data class Simple(val a: String)
 data class TypesUmbrella(
         val str: String,
         val i: Int,
-        val nullable: Double?,
+        val nullable: Double?=null,
         val list: List<String>,
         val map: Map<Int, Boolean>,
         val inner: Simple,

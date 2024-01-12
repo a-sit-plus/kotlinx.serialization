@@ -62,6 +62,11 @@ internal open class CborWriter(
     protected val output: ByteArrayOutput,
 ) : AbstractEncoder() {
 
+    override fun beginCollection(descriptor: SerialDescriptor, collectionSize: Int): CompositeEncoder {
+        println("BUILT-IN START COLLECTION\t\tof size $collectionSize for ${descriptor.serialName}")
+        return super.beginCollection(descriptor, collectionSize)
+    }
+
 
     private var encodeByteArrayAsByteString = false
 
@@ -98,6 +103,7 @@ internal open class CborWriter(
          * writes this token's [preamble] to [output] and invokes the [data] deferred encoding function, also writing to [output]
          */
         fun encode() {
+            if (numChildren > -1) println("A-SIT PLUS PATCH calculated STRUCT/COLL: of size $numChildren for ${descriptor?.serialName}")
             preamble?.let { it.encode(output) }
 
             //byteStrings are encoded into the data already, as are primitives
@@ -223,6 +229,9 @@ internal open class CborWriter(
 
     @OptIn(ExperimentalSerializationApi::class)
     override fun beginStructure(descriptor: SerialDescriptor): CompositeEncoder {
+        if (descriptor.kind == StructureKind.CLASS || descriptor.kind is PolymorphicKind)
+            println("BUILT-IN START ${descriptor.kind}\t\t\tof size ${descriptor.elementsCount} for ${descriptor.serialName}")
+
         currentToken.numChildren = 0
 
         //if we start encoding structures directly (i.e. map, class, list, array)
