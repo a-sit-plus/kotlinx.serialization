@@ -1,0 +1,141 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-cbor/1.6.3-SNAPSHOT/kotlinx-serialization-cbor-1.6.3-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-cbor",
+    "version": "1.6.3-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "wasmWasiApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "wasi"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-wasm-wasi",
+          "version": {
+            "requires": "1.9.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.3-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-cbor-wasm-wasi-1.6.3-SNAPSHOT.klib",
+          "url": "kotlinx-serialization-cbor-wasm-wasi-1.6.3-SNAPSHOT.klib",
+          "size": 94284,
+          "sha512": "ce2224d040d7e127831bbe04326fdac30fec9a8904ef21fc81d086a4c69f8165e75872d49aa524daad9386442e1485d43f9ad226d6fc497a1ecde30d7d358e3d",
+          "sha256": "7be3932a28e282820567a3128b47990774f0447e88a319a809593c172303b669",
+          "sha1": "d4cd252c61c02ee3452d275c10dedcd1525a30cd",
+          "md5": "a31fb8e10b5a0bcc3e76c0cfc066529b"
+        }
+      ]
+    },
+    {
+      "name": "wasmWasiRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "wasi"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-wasm-wasi",
+          "version": {
+            "requires": "1.9.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.3-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-cbor-wasm-wasi-1.6.3-SNAPSHOT.klib",
+          "url": "kotlinx-serialization-cbor-wasm-wasi-1.6.3-SNAPSHOT.klib",
+          "size": 94284,
+          "sha512": "ce2224d040d7e127831bbe04326fdac30fec9a8904ef21fc81d086a4c69f8165e75872d49aa524daad9386442e1485d43f9ad226d6fc497a1ecde30d7d358e3d",
+          "sha256": "7be3932a28e282820567a3128b47990774f0447e88a319a809593c172303b669",
+          "sha1": "d4cd252c61c02ee3452d275c10dedcd1525a30cd",
+          "md5": "a31fb8e10b5a0bcc3e76c0cfc066529b"
+        }
+      ]
+    },
+    {
+      "name": "wasmWasiSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "wasi"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-cbor-wasm-wasi-1.6.3-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-cbor-wasm-wasi-1.6.3-SNAPSHOT-sources.jar",
+          "size": 18803,
+          "sha512": "b65500aabedc36290e381486cf16578212f19590a8dc6d904016561ce38c33a60d5ca4b6de0967aeab7ff453641e918433e8e378ce1cca381140b54cad2f218a",
+          "sha256": "2690bfe0edf3cd4248a5f83b33da243aa1c48059e343af827fad7015b5c7546b",
+          "sha1": "d3a66e03399f1509de27d127795c434227b6e86f",
+          "md5": "d88d9a67fa0303780d9f120eb7cf078c"
+        }
+      ]
+    }
+  ]
+}

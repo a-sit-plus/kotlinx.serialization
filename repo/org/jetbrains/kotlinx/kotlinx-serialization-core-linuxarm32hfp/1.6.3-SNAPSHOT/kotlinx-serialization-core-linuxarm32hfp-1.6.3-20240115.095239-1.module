@@ -1,0 +1,78 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-core/1.6.3-SNAPSHOT/kotlinx-serialization-core-1.6.3-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-core",
+    "version": "1.6.3-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "linuxArm32HfpApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "linux_arm32_hfp",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-core.klib",
+          "url": "kotlinx-serialization-core-linuxarm32hfp-1.6.3-SNAPSHOT.klib",
+          "size": 306223,
+          "sha512": "d2e828036deb0e940c6f0cf9c40add63bfd1d1ac16cfd3f749bdddf73d551695744072facddbf6c2f60e9cba8427c7147b444b21809067aebbf09e9984d1c81b",
+          "sha256": "1366184b0789fb420a4a38e6883a1559d87b1b4246074729f3770d76c2f9453a",
+          "sha1": "96ac2dbfd62a5b0b200cad39f0f6b3203b86c04c",
+          "md5": "28d6aabe7ca80f63f7ae3ce77d214417"
+        }
+      ]
+    },
+    {
+      "name": "linuxArm32HfpSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "linux_arm32_hfp",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-core-linuxarm32hfp-1.6.3-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-core-linuxarm32hfp-1.6.3-SNAPSHOT-sources.jar",
+          "size": 99052,
+          "sha512": "7281b9edb91185f348d47a201c02d68a41fc1cf0d18dfd62f735cd6de905e37b83ca2df5091291373bab770d82bfba1792b39fb916ec0755a1905c39846f2e3b",
+          "sha256": "fc5200b131b5f7f9734678d0a72d7b56e9b6989e6c1314774dd03ba23146b4ee",
+          "sha1": "492370b6adab3a1c2c58f169b2f9de19292eae8c",
+          "md5": "fa2e3374bde4370cb43f57b31984131b"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-json/1.6.3-SNAPSHOT/kotlinx-serialization-json-1.6.3-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-json",
+    "version": "1.6.3-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "linuxArm32HfpApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "linux_arm32_hfp",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.3-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-json.klib",
+          "url": "kotlinx-serialization-json-linuxarm32hfp-1.6.3-SNAPSHOT.klib",
+          "size": 272670,
+          "sha512": "80204f421b12dc2b5ea30a5141cbabc41ba309580516f8839d31bb87f22d417e7067b812567ce23260ed0d73dffdf17915f67213d0e3a0723cc454db89fb8f3f",
+          "sha256": "fcf8df9606acac41893f06a0cb99e1b8fa6526965a079bb56c3a70efc63e9330",
+          "sha1": "3ff3ead43f6904f0d8e448c1944a63d50655a502",
+          "md5": "da7c25e1abfb054e3025c505fe5b6ce3"
+        }
+      ]
+    },
+    {
+      "name": "linuxArm32HfpSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "linux_arm32_hfp",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-json-linuxarm32hfp-1.6.3-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-json-linuxarm32hfp-1.6.3-SNAPSHOT-sources.jar",
+          "size": 75475,
+          "sha512": "612d68f19e08ba97da2af29681762e44a75715696c2f7c701e5827e24ae79cfcff41806ae10c6495987ff18b3f858b7ac16fffe012e402d60161b7eac4537f77",
+          "sha256": "1d6191146cc5fca60a4b4e7dffd6498fe06eada634f20649a58eb2539fc1133c",
+          "sha1": "fafaa45e226942a5c14bb7a4ab117ee231fdd365",
+          "md5": "918557f577b85f53cf8e9eaef52890c3"
+        }
+      ]
+    }
+  ]
+}

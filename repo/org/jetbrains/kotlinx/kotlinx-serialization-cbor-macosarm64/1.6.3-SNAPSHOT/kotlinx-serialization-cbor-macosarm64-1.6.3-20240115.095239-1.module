@@ -1,0 +1,129 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-cbor/1.6.3-SNAPSHOT/kotlinx-serialization-cbor-1.6.3-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-cbor",
+    "version": "1.6.3-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "macosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "macos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.3-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-cbor.klib",
+          "url": "kotlinx-serialization-cbor-macosarm64-1.6.3-SNAPSHOT.klib",
+          "size": 94393,
+          "sha512": "4f74aa8ccf21ea3fda9bfc7324df7fcac5ef2dbfafa4ff698201ee2ac4a4e928ad1f94ee5153ffc26aaf162ce24e1748de03247e30bb47aaaaef17da31d138d9",
+          "sha256": "ec807bf969ae8bc06cb5cb113a9293f5fd585b057748126e85f7684c70ed75ce",
+          "sha1": "2e04080fbed87ceeb8ae769f3cfdf7c6a0745ffa",
+          "md5": "ca5e37dfc467bcc054e68b0c4367b469"
+        }
+      ]
+    },
+    {
+      "name": "macosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "macos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-cbor-macosarm64-1.6.3-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-cbor-macosarm64-1.6.3-SNAPSHOT-sources.jar",
+          "size": 18803,
+          "sha512": "b65500aabedc36290e381486cf16578212f19590a8dc6d904016561ce38c33a60d5ca4b6de0967aeab7ff453641e918433e8e378ce1cca381140b54cad2f218a",
+          "sha256": "2690bfe0edf3cd4248a5f83b33da243aa1c48059e343af827fad7015b5c7546b",
+          "sha1": "d3a66e03399f1509de27d127795c434227b6e86f",
+          "md5": "d88d9a67fa0303780d9f120eb7cf078c"
+        }
+      ]
+    },
+    {
+      "name": "macosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "macos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.3-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-cbor-macosarm64-1.6.3-SNAPSHOT-metadata.jar",
+          "url": "kotlinx-serialization-cbor-macosarm64-1.6.3-SNAPSHOT-metadata.jar",
+          "size": 261,
+          "sha512": "2f4b0849f46cdbee4514f966f15e084a93f7e9e14cf113a5ca9d0f1cadaa4c52faae97054cdbeaaa41ca24dace61a8598958729243989e8c25f55b2c936e3150",
+          "sha256": "3a69be67f90b712dd9580cab2cf4ba354df25a63ed462499fac3a98998c30ec3",
+          "sha1": "75502acf3d18e9fb0d83958edfc546d1d48c31a5",
+          "md5": "618f8f32ef2ad506e179db3249aae46b"
+        }
+      ]
+    }
+  ]
+}

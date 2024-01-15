@@ -1,0 +1,129 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-protobuf/1.6.3-SNAPSHOT/kotlinx-serialization-protobuf-1.6.3-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-protobuf",
+    "version": "1.6.3-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "macosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "macos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.3-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-protobuf.klib",
+          "url": "kotlinx-serialization-protobuf-macosarm64-1.6.3-SNAPSHOT.klib",
+          "size": 129192,
+          "sha512": "1505b6a4484cd097df94c3727892e2404002f9de1522efb6b666b6a9faf9197d82eb2267ef2c7f23e777c278485ba32cdc8b6b260206d72c918b43ca12ee8e9d",
+          "sha256": "5a1c2b7627b376e2caadbc01cd309e3d987286e7d5c91c4a6bc28e88b2cfbdfa",
+          "sha1": "6f36e0ebf0db27e69440a3af81e1e81e2ab171ea",
+          "md5": "9054ffdfd783b6c47b332e04c76c5169"
+        }
+      ]
+    },
+    {
+      "name": "macosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "macos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-protobuf-macosarm64-1.6.3-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-protobuf-macosarm64-1.6.3-SNAPSHOT-sources.jar",
+          "size": 28555,
+          "sha512": "3db518a375af956f733beb93049e518d5a1079996d3d3fdca57c78d24c26330a22e2f3b788b5f49cd6cdef8a41c05535020ececade2136971a7775251e581e87",
+          "sha256": "82ff723972fbd6c1471af7e7ed88fe6c229b6edb47d74e6497e8965a8947913a",
+          "sha1": "4e2889aded9e05f64bca7b3ebf5e51916c93e936",
+          "md5": "5af205429bd7696619b37c7e0c2cf97b"
+        }
+      ]
+    },
+    {
+      "name": "macosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "macos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.3-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-protobuf-macosarm64-1.6.3-SNAPSHOT-metadata.jar",
+          "url": "kotlinx-serialization-protobuf-macosarm64-1.6.3-SNAPSHOT-metadata.jar",
+          "size": 261,
+          "sha512": "fefd33efb19e4401b4574ad4f852067dc53e688caf98a505bb0bcb61ca1e4e5fe7beb1fd31c7e14483ad0fc9d3b2137483442d95d06e97a6c75c89a83d4e0221",
+          "sha256": "d4db7e018396fe821413bd9dfdc407e40d7049c0aed7a6c8bcd96e9ef6f7efda",
+          "sha1": "d07c9e56a89829fb4e2c0f39a792607527e96247",
+          "md5": "34ff3fba71902f8f1843f7ec706b194d"
+        }
+      ]
+    }
+  ]
+}

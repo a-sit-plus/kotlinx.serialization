@@ -1,0 +1,115 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-core/1.6.3-SNAPSHOT/kotlinx-serialization-core-1.6.3-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-core",
+    "version": "1.6.3-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "tvosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "tvos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-core.klib",
+          "url": "kotlinx-serialization-core-tvosx64-1.6.3-SNAPSHOT.klib",
+          "size": 306162,
+          "sha512": "d60d2f73426c3a01feeb6d198c5ac5ac4023e126f99c9172fd403c0390a1bf5382170904538dfbfb901f4a6afe3fc2eb5c96ac235b05a9e29dcc35558d1fe3d7",
+          "sha256": "e106dcc0e1d4a408fc92a2f35b7a2f4ef027c724aeb7aad49acfed06c423f9fb",
+          "sha1": "30cfd2a9d3dd7b5b41e8a39f8543c9619d492018",
+          "md5": "f9edb3604990aac8b1136e262fedc187"
+        }
+      ]
+    },
+    {
+      "name": "tvosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "tvos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-core-tvosx64-1.6.3-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-core-tvosx64-1.6.3-SNAPSHOT-sources.jar",
+          "size": 99052,
+          "sha512": "7281b9edb91185f348d47a201c02d68a41fc1cf0d18dfd62f735cd6de905e37b83ca2df5091291373bab770d82bfba1792b39fb916ec0755a1905c39846f2e3b",
+          "sha256": "fc5200b131b5f7f9734678d0a72d7b56e9b6989e6c1314774dd03ba23146b4ee",
+          "sha1": "492370b6adab3a1c2c58f169b2f9de19292eae8c",
+          "md5": "fa2e3374bde4370cb43f57b31984131b"
+        }
+      ]
+    },
+    {
+      "name": "tvosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "tvos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-core-tvosx64-1.6.3-SNAPSHOT-metadata.jar",
+          "url": "kotlinx-serialization-core-tvosx64-1.6.3-SNAPSHOT-metadata.jar",
+          "size": 261,
+          "sha512": "127ccd0977081975f1a0e49b3a3dbd2a204b5e6a1ae106b8b57fa214eb5438c7ca656427278b95873a05619a5c7ee79093f5399de93739cd1fa832ba0ba37123",
+          "sha256": "fad69b9c5634504634f5b5d77251f5076ebacde24945bf2119406e55294bbbdc",
+          "sha1": "2ae6ec13bf76fd5f6e4d14e0682b7b9d80a20c3f",
+          "md5": "9982a802c4bbdb8dd329aceec6404bfe"
+        }
+      ]
+    }
+  ]
+}

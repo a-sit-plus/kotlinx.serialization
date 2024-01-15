@@ -1,0 +1,155 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-json/1.6.3-SNAPSHOT/kotlinx-serialization-json-1.6.3-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-json",
+    "version": "1.6.3-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "jsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-js",
+          "version": {
+            "requires": "1.9.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-dom-api-compat",
+          "version": {
+            "requires": "1.9.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.3-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-json-js-1.6.3-SNAPSHOT.klib",
+          "url": "kotlinx-serialization-json-js-1.6.3-SNAPSHOT.klib",
+          "size": 323116,
+          "sha512": "5ac4f612cf1751a7189689f30d9389f0715a72cbe2670312f43366a28d10f4eec04ce910842708d667905bf05723a06fcbd8b9344547a0aac6bfac39bfb9f492",
+          "sha256": "dbda8b9a4ced042c84a6d6c5a60835275dd2fab8363052ff9bcf73b385b83994",
+          "sha1": "132c2c5d9cb305af28d14cc2cef0a7106e48269e",
+          "md5": "6f59ffa3a31eae06cc223ed157d62cf7"
+        }
+      ]
+    },
+    {
+      "name": "jsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-js",
+          "version": {
+            "requires": "1.9.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-dom-api-compat",
+          "version": {
+            "requires": "1.9.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.3-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-json-js-1.6.3-SNAPSHOT.klib",
+          "url": "kotlinx-serialization-json-js-1.6.3-SNAPSHOT.klib",
+          "size": 323116,
+          "sha512": "5ac4f612cf1751a7189689f30d9389f0715a72cbe2670312f43366a28d10f4eec04ce910842708d667905bf05723a06fcbd8b9344547a0aac6bfac39bfb9f492",
+          "sha256": "dbda8b9a4ced042c84a6d6c5a60835275dd2fab8363052ff9bcf73b385b83994",
+          "sha1": "132c2c5d9cb305af28d14cc2cef0a7106e48269e",
+          "md5": "6f59ffa3a31eae06cc223ed157d62cf7"
+        }
+      ]
+    },
+    {
+      "name": "jsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-json-js-1.6.3-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-json-js-1.6.3-SNAPSHOT-sources.jar",
+          "size": 82668,
+          "sha512": "f0897b72bca9fe0c4fc74d0af9422c57aaf34e03f2ab40d5c155cb2891026e4390cf00f604ac2db1aa9a7334b5af07f3f14dc727e3014004eb813191e2d9b747",
+          "sha256": "645166ef69b205e108a915e387a1aeaff75e131850dc10171e5b2d836815415c",
+          "sha1": "b067f9ad2a63018c420b146bb3c6685430db26b3",
+          "md5": "ecae40802b68b0db3057b8e058f7103d"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-protobuf/1.6.3-SNAPSHOT/kotlinx-serialization-protobuf-1.6.3-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-protobuf",
+    "version": "1.6.3-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "androidNativeX86ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_x86",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.3-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-protobuf.klib",
+          "url": "kotlinx-serialization-protobuf-androidnativex86-1.6.3-SNAPSHOT.klib",
+          "size": 129192,
+          "sha512": "2eb870d861d170766548fbf8e0f9ff4e95481b0efa2e79face5e3043bc716ca93443d3ab3c7e783fe46b9607df3ae70f1d92506fe0bd02c41c03f38a92b6a7ae",
+          "sha256": "6e56a50a58498127c312dca71d847292520e484442a07dd77c902f004f5f9d6c",
+          "sha1": "6e66c91ce0e3c6abf160af1272e6f2de383264b2",
+          "md5": "4037c84a43222508185d010e462d2268"
+        }
+      ]
+    },
+    {
+      "name": "androidNativeX86SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_x86",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-protobuf-androidnativex86-1.6.3-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-protobuf-androidnativex86-1.6.3-SNAPSHOT-sources.jar",
+          "size": 28555,
+          "sha512": "3db518a375af956f733beb93049e518d5a1079996d3d3fdca57c78d24c26330a22e2f3b788b5f49cd6cdef8a41c05535020ececade2136971a7775251e581e87",
+          "sha256": "82ff723972fbd6c1471af7e7ed88fe6c229b6edb47d74e6497e8965a8947913a",
+          "sha1": "4e2889aded9e05f64bca7b3ebf5e51916c93e936",
+          "md5": "5af205429bd7696619b37c7e0c2cf97b"
+        }
+      ]
+    }
+  ]
+}

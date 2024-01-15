@@ -1,0 +1,129 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-protobuf/1.6.3-SNAPSHOT/kotlinx-serialization-protobuf-1.6.3-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-protobuf",
+    "version": "1.6.3-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "watchosDeviceArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_device_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.3-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-protobuf.klib",
+          "url": "kotlinx-serialization-protobuf-watchosdevicearm64-1.6.3-SNAPSHOT.klib",
+          "size": 129270,
+          "sha512": "9a4d02271392fcb11e253cc75a9530f48f81d653052ba6f5be1c992e02c9775aaf0b93ecf5540480ca1b1de0222f508e79d064fcac176021abc6234da422b4ca",
+          "sha256": "b40b8b7cef5beeeff67d5ac28eb18c9ee1a276fadcebaba60837c6aba4281cc6",
+          "sha1": "bf6c351f2406ec6a6738a2fce84b6897b1413ced",
+          "md5": "df2a473c1abdae11cf180b8e00772b4a"
+        }
+      ]
+    },
+    {
+      "name": "watchosDeviceArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_device_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-protobuf-watchosdevicearm64-1.6.3-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-protobuf-watchosdevicearm64-1.6.3-SNAPSHOT-sources.jar",
+          "size": 28555,
+          "sha512": "3db518a375af956f733beb93049e518d5a1079996d3d3fdca57c78d24c26330a22e2f3b788b5f49cd6cdef8a41c05535020ececade2136971a7775251e581e87",
+          "sha256": "82ff723972fbd6c1471af7e7ed88fe6c229b6edb47d74e6497e8965a8947913a",
+          "sha1": "4e2889aded9e05f64bca7b3ebf5e51916c93e936",
+          "md5": "5af205429bd7696619b37c7e0c2cf97b"
+        }
+      ]
+    },
+    {
+      "name": "watchosDeviceArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_device_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.6.3-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-protobuf-watchosdevicearm64-1.6.3-SNAPSHOT-metadata.jar",
+          "url": "kotlinx-serialization-protobuf-watchosdevicearm64-1.6.3-SNAPSHOT-metadata.jar",
+          "size": 261,
+          "sha512": "0cdecbffa30866ac0547d30d1d6905700682b61f151f255b8135be1e8764335d7c8cd8055b5f09794e30f629242364f384ff1d31498bdc7c0f2d9ca916c9975d",
+          "sha256": "48fa1268c30f729f6f4a8641a91202443f31bcf5140d14d7412615001353ceb1",
+          "sha1": "d2da36880059a49f91cb474725f65673d53515f8",
+          "md5": "d1e22154ecab954742bb0dd96abae390"
+        }
+      ]
+    }
+  ]
+}

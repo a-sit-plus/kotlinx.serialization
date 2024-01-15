@@ -1,0 +1,78 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-core/1.6.3-SNAPSHOT/kotlinx-serialization-core-1.6.3-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-core",
+    "version": "1.6.3-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "mingwX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "mingw_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-core.klib",
+          "url": "kotlinx-serialization-core-mingwx64-1.6.3-SNAPSHOT.klib",
+          "size": 306175,
+          "sha512": "4734a974821f95cc6e2e23d60bc1066a5ad583fc35d6f48933534d9fe55660c4b459e29650e705d74d373b50fc63772eb7779f0ccdea3787fdac435e7fb7c853",
+          "sha256": "f669ac5ac17925c15abb5cd478582ab923194abe3596891c49dac8d323844f9c",
+          "sha1": "0147f4f107d18a5f889a5c9494b7d3aa9cee4602",
+          "md5": "dd78a6c7a43a989f59a12399cbfe91ed"
+        }
+      ]
+    },
+    {
+      "name": "mingwX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "mingw_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-core-mingwx64-1.6.3-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-core-mingwx64-1.6.3-SNAPSHOT-sources.jar",
+          "size": 99052,
+          "sha512": "7281b9edb91185f348d47a201c02d68a41fc1cf0d18dfd62f735cd6de905e37b83ca2df5091291373bab770d82bfba1792b39fb916ec0755a1905c39846f2e3b",
+          "sha256": "fc5200b131b5f7f9734678d0a72d7b56e9b6989e6c1314774dd03ba23146b4ee",
+          "sha1": "492370b6adab3a1c2c58f169b2f9de19292eae8c",
+          "md5": "fa2e3374bde4370cb43f57b31984131b"
+        }
+      ]
+    }
+  ]
+}

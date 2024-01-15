@@ -1,0 +1,115 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-core/1.6.3-SNAPSHOT/kotlinx-serialization-core-1.6.3-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-core",
+    "version": "1.6.3-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "tvosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-core.klib",
+          "url": "kotlinx-serialization-core-tvosarm64-1.6.3-SNAPSHOT.klib",
+          "size": 306183,
+          "sha512": "60d93104c94965ba68db6f1b7997427367c4338047198981232a921b05d77579c05fa81536e764f65d2b02223abf8d9856553fdb5d433ae3ec3bf6ca064ed83f",
+          "sha256": "55bcce05bc681842c465cc9e5be238d8dc13eeaddd629e2f5d70cc9e74cae192",
+          "sha1": "2bcb105ec77f0a32fb12b99c28dbdd42df620299",
+          "md5": "bfc22f4cf85026187c2fae5d1a60d67e"
+        }
+      ]
+    },
+    {
+      "name": "tvosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-core-tvosarm64-1.6.3-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-core-tvosarm64-1.6.3-SNAPSHOT-sources.jar",
+          "size": 99052,
+          "sha512": "7281b9edb91185f348d47a201c02d68a41fc1cf0d18dfd62f735cd6de905e37b83ca2df5091291373bab770d82bfba1792b39fb916ec0755a1905c39846f2e3b",
+          "sha256": "fc5200b131b5f7f9734678d0a72d7b56e9b6989e6c1314774dd03ba23146b4ee",
+          "sha1": "492370b6adab3a1c2c58f169b2f9de19292eae8c",
+          "md5": "fa2e3374bde4370cb43f57b31984131b"
+        }
+      ]
+    },
+    {
+      "name": "tvosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-core-tvosarm64-1.6.3-SNAPSHOT-metadata.jar",
+          "url": "kotlinx-serialization-core-tvosarm64-1.6.3-SNAPSHOT-metadata.jar",
+          "size": 261,
+          "sha512": "127ccd0977081975f1a0e49b3a3dbd2a204b5e6a1ae106b8b57fa214eb5438c7ca656427278b95873a05619a5c7ee79093f5399de93739cd1fa832ba0ba37123",
+          "sha256": "fad69b9c5634504634f5b5d77251f5076ebacde24945bf2119406e55294bbbdc",
+          "sha1": "2ae6ec13bf76fd5f6e4d14e0682b7b9d80a20c3f",
+          "md5": "9982a802c4bbdb8dd329aceec6404bfe"
+        }
+      ]
+    }
+  ]
+}

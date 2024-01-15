@@ -3,10 +3,10 @@
   <groupId>org.jetbrains.kotlinx</groupId>
   <artifactId>kotlinx-serialization-json-okio-iosx64</artifactId>
   <versioning>
-    <latest>1.6.0-SNAPSHOT</latest>
+    <latest>1.6.3-SNAPSHOT</latest>
     <versions>
-      <version>1.6.0-SNAPSHOT</version>
+      <version>1.6.3-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20230818145920</lastUpdated>
+    <lastUpdated>20240115100123</lastUpdated>
   </versioning>
 </metadata>
