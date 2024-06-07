@@ -1,0 +1,132 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-cbor/1.7.1-SNAPSHOT/kotlinx-serialization-cbor-1.7.1-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-cbor",
+    "version": "1.7.1-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.7"
+    }
+  },
+  "variants": [
+    {
+      "name": "tvosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "tvos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.7.1-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-cbor.klib",
+          "url": "kotlinx-serialization-cbor-tvossimulatorarm64-1.7.1-SNAPSHOT.klib",
+          "size": 94899,
+          "sha512": "6e1cb6c259c4457242bcc687546b487282ae1de92c3759dc90d814ca255ddb84a71e1a624cf9b06b8a146d25e23511cd5b07e69a1a61ee71d90515e4a741e7fa",
+          "sha256": "2f1db52e418306740b2b37184fab952515b81f513f2a2984ff816d93a947d524",
+          "sha1": "79c72f2e2449b9bb65cc57e567e4529a6bb4f8e8",
+          "md5": "2d3c5ae75027c485fd58a4ab39ecca36"
+        }
+      ]
+    },
+    {
+      "name": "tvosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "tvos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-cbor-tvossimulatorarm64-1.7.1-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-cbor-tvossimulatorarm64-1.7.1-SNAPSHOT-sources.jar",
+          "size": 18897,
+          "sha512": "a63dc917312b163f69d490eda6a6ccc95d491217b78b5784ea16477a1c7e049075af99797b7b74d6a5b28ba6a33e8fa05fbe4519d0e2a80b545eb7b76b21db2d",
+          "sha256": "75bfaa21ec985c5dafbd48e87d30552ff3bf8d013e8c032bbf05bc88494cc856",
+          "sha1": "183f81c6706540efe678229def6e145c2e0e396c",
+          "md5": "1783d809cb809120d7b368a73df60961"
+        }
+      ]
+    },
+    {
+      "name": "tvosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "tvos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.7.1-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-cbor-tvossimulatorarm64-1.7.1-SNAPSHOT-metadata.jar",
+          "url": "kotlinx-serialization-cbor-tvossimulatorarm64-1.7.1-SNAPSHOT-metadata.jar",
+          "size": 261,
+          "sha512": "cf53d75be284141d749f934a29b07c2f2c7ff4dd9f41ccebd9125d14ca8d76191788bcdf2519e89dedbc690e397691fbfee38a66a91c8903fa2a7504514d7323",
+          "sha256": "5590a1b87b555caee93221a0556b0729bc6b4e392e6afc9f294d357c31d3e1ef",
+          "sha1": "d054a7db399973df6a48249a251335dfcc81ad78",
+          "md5": "5515f2642793d41246b7acc2d08a56a0"
+        }
+      ]
+    }
+  ]
+}

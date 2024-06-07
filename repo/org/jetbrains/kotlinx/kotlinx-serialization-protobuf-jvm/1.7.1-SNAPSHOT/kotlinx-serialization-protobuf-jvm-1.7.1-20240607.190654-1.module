@@ -1,0 +1,152 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-protobuf/1.7.1-SNAPSHOT/kotlinx-serialization-protobuf-1.7.1-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-protobuf",
+    "version": "1.7.1-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.7"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-bom",
+          "version": {
+            "requires": "1.7.1-SNAPSHOT"
+          },
+          "attributes": {
+            "org.gradle.category": "platform"
+          },
+          "endorseStrictVersions": true
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.7.1-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-protobuf-jvm-1.7.1-SNAPSHOT.jar",
+          "url": "kotlinx-serialization-protobuf-jvm-1.7.1-SNAPSHOT.jar",
+          "size": 107942,
+          "sha512": "16e1e02703b3f7b22c18056fa2f081b95257c95c318c7adbe1d1ebed0b0d85e44a2c91709aa8c1007b61b29cb46aceb156d7cb519126243c215aea120b0c87e8",
+          "sha256": "c5044a7f13a7139d1fc8e5f7876129c31642dc9512a3e64fc0fb2ffb487d9ac6",
+          "sha1": "385d1536ede3c756e18e7d29cf630bdff074ed1e",
+          "md5": "0888aa98a0fd9010e1b365e8a2e3803b"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-bom",
+          "version": {
+            "requires": "1.7.1-SNAPSHOT"
+          },
+          "attributes": {
+            "org.gradle.category": "platform"
+          },
+          "endorseStrictVersions": true
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.7.1-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-protobuf-jvm-1.7.1-SNAPSHOT.jar",
+          "url": "kotlinx-serialization-protobuf-jvm-1.7.1-SNAPSHOT.jar",
+          "size": 107942,
+          "sha512": "16e1e02703b3f7b22c18056fa2f081b95257c95c318c7adbe1d1ebed0b0d85e44a2c91709aa8c1007b61b29cb46aceb156d7cb519126243c215aea120b0c87e8",
+          "sha256": "c5044a7f13a7139d1fc8e5f7876129c31642dc9512a3e64fc0fb2ffb487d9ac6",
+          "sha1": "385d1536ede3c756e18e7d29cf630bdff074ed1e",
+          "md5": "0888aa98a0fd9010e1b365e8a2e3803b"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-protobuf-jvm-1.7.1-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-protobuf-jvm-1.7.1-SNAPSHOT-sources.jar",
+          "size": 32019,
+          "sha512": "862df78d28179d2b8e8c180776c6cde887d5e8282710d131333e5d9761f020ce9b5813f658e480fe02642836866c3e79d6146c5b69b7a2cebd7cc8628285a763",
+          "sha256": "ee145fe9da5c53456e2e9e57d40333c5ed944e60260422c4a74f35d2985c5622",
+          "sha1": "9ffcd952c4b7d9e919e95d38d6c3e22bbf28b411",
+          "md5": "15db7d2874a6eeb42b2135ba5c6cf833"
+        }
+      ]
+    }
+  ]
+}
