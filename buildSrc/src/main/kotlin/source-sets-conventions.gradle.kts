@@ -43,7 +43,7 @@ kotlin {
         }
     }
 
-    js {
+   /* js {
         nodejs {
             testTask {
                 useMocha {
@@ -67,7 +67,7 @@ kotlin {
         wasmWasi {
             nodejs()
         }
-    }
+    }*/
 
     sourceSets.all {
         kotlin.srcDirs("$name/src")
@@ -106,7 +106,7 @@ kotlin {
                 api("org.jetbrains.kotlin:kotlin-test-junit")
             }
         }
-
+/*
         jsMain {
             dependencies {
                 api("org.jetbrains.kotlin:kotlin-stdlib-js")
@@ -154,7 +154,7 @@ kotlin {
                     api("org.jetbrains.kotlin:kotlin-test-wasm-wasi")
                 }
             }
-        }
+        }*/
     }
 
     sourceSets.matching({ it.name.contains("Test") }).configureEach {
