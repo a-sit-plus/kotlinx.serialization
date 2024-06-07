@@ -83,10 +83,6 @@ afterEvaluate {
 
 publishing {
     repositories {
-        maven {
-            url = java.io.File(rootProject.projectDir.absolutePath + "/repo").toURI()
-            name = "local"
-        }
         configureMavenPublication(this, project)
     }
 }

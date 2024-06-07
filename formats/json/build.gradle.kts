@@ -36,7 +36,7 @@ kotlin {
             dependencies {
                 api(project(":kotlinx-serialization-core"))
             }
-        }/*
+        }
         register("jsWasmMain") {
             dependsOn(commonMain.get())
         }
@@ -48,7 +48,7 @@ kotlin {
         }
         named("wasmWasiMain") {
             dependsOn(named("jsWasmMain").get())
-        }*/
+        }
     }
 }
 
