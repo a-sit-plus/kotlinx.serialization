@@ -15,6 +15,9 @@
  * Benchmark                Mode  Cnt     Score   Error   Units
  * CborBaseline.fromBytes  thrpt   10  1065.431 ± 4.217  ops/ms
  * CborBaseline.toBytes    thrpt   10  1043.322 ± 5.506  ops/ms
+ *
+ * CborBaseline.fromBytes  thrpt   10  1073.279 ± 4.196  ops/ms
+ * CborBaseline.toBytes    thrpt   10  1107.893 ± 5.853  ops/ms
  */
 
 package kotlinx.serialization.cbor.internal
@@ -31,7 +34,7 @@ import kotlin.experimental.*
 //value classes are only inlined on the JVM, so we use a typealias and extensions instead
 private typealias Stack = MutableList<CborWriter.Data>
 
-private fun Stack(): Stack = mutableListOf()
+private fun Stack(vararg elements:CborWriter.Data): Stack = mutableListOf(*elements)
 private fun Stack.push(value: CborWriter.Data) = add(value)
 private fun Stack.pop() = removeLast()
 private fun Stack.peek() = last()
@@ -39,7 +42,7 @@ private fun Stack.peek() = last()
 // Writes class as map [fieldName, fieldValue]
 internal open class CborWriter(
     private val cbor: Cbor,
-    protected val output: ByteArrayOutput,
+    output: ByteArrayOutput,
 ) : AbstractEncoder() {
     var isClass = false
 
@@ -48,23 +51,13 @@ internal open class CborWriter(
     class Data(val bytes: ByteArrayOutput, var elementCount: Int)
 
 
-    inner class Preamble(
-        private val parentDescriptor: SerialDescriptor?,
-        private val index: Int,
-        private val label: Long?,
-        private val name: String?
-    ) {
-
-
-    }
-
     /**
      * Encoding requires two passes to support definite length encoding.
      *
      * Tokens are pushed to the stack when a structure starts, and popped when a structure ends. In between the number to children, which **actually** need to be written, are counted
      *
      */
-    private val structureStack = Stack()
+    private val structureStack = Stack(Data(output,-1))
 
 
     override val serializersModule: SerializersModule
@@ -77,8 +70,7 @@ internal open class CborWriter(
         if ((encodeByteArrayAsByteString || cbor.alwaysUseByteString)
             && serializer.descriptor == ByteArraySerializer().descriptor
         ) {
-            if (structureStack.isEmpty()) output.encodeByteString(value as ByteArray)
-            else structureStack.peek().bytes.encodeByteString(value as ByteArray)
+            structureStack.peek().bytes.encodeByteString(value as ByteArray)
         } else {
             encodeByteArrayAsByteString = encodeByteArrayAsByteString || serializer.descriptor.isInlineByteString()
             super.encodeSerializableValue(serializer, value)
@@ -99,10 +91,8 @@ internal open class CborWriter(
         val completedCurrent = structureStack.pop()
         if (!cbor.writeDefiniteLengths)
             completedCurrent.bytes.end()
-        val end = structureStack.isEmpty()
 
-
-        val accumulator = if (end) output else structureStack.peek().bytes
+        val accumulator =  structureStack.peek().bytes
 
         //If this nullpointers, we have a structural problem anyhow
         val beginDescriptor = descriptor
@@ -165,62 +155,52 @@ internal open class CborWriter(
     //If any of the following functions are called for serializing raw primitives (i.e. something other than a class,
     // list, map or array, no children exist and the root node needs the data
     override fun encodeString(value: String) {
-        if (structureStack.isEmpty()) output.encodeString(value)
-        else structureStack.peek().bytes.encodeString(value)
+      structureStack.peek().bytes.encodeString(value)
     }
 
 
     override fun encodeFloat(value: Float) {
-        if (structureStack.isEmpty()) output.encodeFloat(value)
-        else structureStack.peek().bytes.encodeFloat(value)
+       structureStack.peek().bytes.encodeFloat(value)
     }
 
 
     override fun encodeDouble(value: Double) {
-        if (structureStack.isEmpty()) output.encodeDouble(value)
-        else structureStack.peek().bytes.encodeDouble(value)
+        structureStack.peek().bytes.encodeDouble(value)
     }
 
 
     override fun encodeChar(value: Char) {
-        if (structureStack.isEmpty()) output.encodeNumber(value.code.toLong())
-        else structureStack.peek().bytes.encodeNumber(value.code.toLong())
+        structureStack.peek().bytes.encodeNumber(value.code.toLong())
     }
 
 
     override fun encodeByte(value: Byte) {
-        if (structureStack.isEmpty()) output.encodeNumber(value.toLong())
-        else structureStack.peek().bytes.encodeNumber(value.toLong())
+         structureStack.peek().bytes.encodeNumber(value.toLong())
     }
 
 
     override fun encodeShort(value: Short) {
-        if (structureStack.isEmpty()) output.encodeNumber(value.toLong())
-        else structureStack.peek().bytes.encodeNumber(value.toLong())
+      structureStack.peek().bytes.encodeNumber(value.toLong())
     }
 
     override fun encodeInt(value: Int) {
-        if (structureStack.isEmpty()) output.encodeNumber(value.toLong())
-        else structureStack.peek().bytes.encodeNumber(value.toLong())
+     structureStack.peek().bytes.encodeNumber(value.toLong())
     }
 
 
     override fun encodeLong(value: Long) {
-        if (structureStack.isEmpty()) output.encodeNumber(value)
-        else structureStack.peek().bytes.encodeNumber(value)
+       structureStack.peek().bytes.encodeNumber(value)
     }
 
 
     override fun encodeBoolean(value: Boolean) {
-        if (structureStack.isEmpty()) output.encodeBoolean(value)
-        else structureStack.peek().bytes.encodeBoolean(value)
+        structureStack.peek().bytes.encodeBoolean(value)
     }
 
 
     override fun encodeNull() {
-        val dest = if (structureStack.isEmpty()) output else structureStack.peek().bytes
-        if (isClass) dest.encodeEmptyMap()
-        else dest.encodeNull()
+        if (isClass)  structureStack.peek().bytes.encodeEmptyMap()
+        else  structureStack.peek().bytes.encodeNull()
     }
 
     @OptIn(ExperimentalSerializationApi::class) // KT-46731
@@ -228,8 +208,7 @@ internal open class CborWriter(
         enumDescriptor: SerialDescriptor,
         index: Int
     ) {
-        if (structureStack.isEmpty()) output.encodeString(enumDescriptor.getElementName(index))
-        else structureStack.peek().bytes.encodeString(enumDescriptor.getElementName(index))
+         structureStack.peek().bytes.encodeString(enumDescriptor.getElementName(index))
     }
 }
 
