@@ -42,7 +42,7 @@ private fun Stack.peek() = last()
 // Writes class as map [fieldName, fieldValue]
 internal open class CborWriter(
     private val cbor: Cbor,
-    output: ByteArrayOutput,
+    private val output: ByteArrayOutput,
 ) : AbstractEncoder() {
     var isClass = false
 
@@ -80,8 +80,29 @@ internal open class CborWriter(
     override fun shouldEncodeElementDefault(descriptor: SerialDescriptor, index: Int): Boolean = cbor.encodeDefaults
 
     override fun beginStructure(descriptor: SerialDescriptor): CompositeEncoder {
-        val current = Data(ByteArrayOutput(), 0)
-        //    descriptor.getArrayTags()?.forEach { current.bytes.encodeTag(it) }
+        val current = Data(if(cbor.writeDefiniteLengths)ByteArrayOutput() else output, 0)
+        if(!cbor.writeDefiniteLengths) {
+            val accumulator = current.bytes
+            val beginDescriptor=descriptor
+            if (beginDescriptor.hasArrayTag()) {
+                beginDescriptor.getArrayTags()?.forEach { accumulator.encodeTag(it) }
+                 accumulator.startArray()
+            } else {
+                when (beginDescriptor.kind) {
+                    StructureKind.LIST, is PolymorphicKind -> {
+                         accumulator.startArray()
+                    }
+
+                    is StructureKind.MAP -> {
+                         accumulator.startMap()
+                    }
+
+                    else -> {
+                         accumulator.startMap()
+                    }
+                }
+            }
+        }
         structureStack.push(current)
         return this
     }
@@ -89,8 +110,7 @@ internal open class CborWriter(
     override fun endStructure(descriptor: SerialDescriptor) {
 
         val completedCurrent = structureStack.pop()
-        if (!cbor.writeDefiniteLengths)
-            completedCurrent.bytes.end()
+
 
         val accumulator =  structureStack.peek().bytes
 
@@ -98,29 +118,32 @@ internal open class CborWriter(
         val beginDescriptor = descriptor
         val numChildren = completedCurrent.elementCount
 
-        if (beginDescriptor.hasArrayTag()) {
-            beginDescriptor.getArrayTags()?.forEach { accumulator.encodeTag(it) }
-            if (cbor.writeDefiniteLengths) accumulator.startArray(numChildren.toULong())
-            else accumulator.startArray()
-        } else {
-            when (beginDescriptor.kind) {
-                StructureKind.LIST, is PolymorphicKind -> {
-                    if (cbor.writeDefiniteLengths) accumulator.startArray(numChildren.toULong())
-                    else accumulator.startArray()
-                }
+        if(cbor.writeDefiniteLengths) {
+            if (beginDescriptor.hasArrayTag()) {
+                beginDescriptor.getArrayTags()?.forEach { accumulator.encodeTag(it) }
+                if (cbor.writeDefiniteLengths) accumulator.startArray(numChildren.toULong())
+                else accumulator.startArray()
+            } else {
+                when (beginDescriptor.kind) {
+                    StructureKind.LIST, is PolymorphicKind -> {
+                        if (cbor.writeDefiniteLengths) accumulator.startArray(numChildren.toULong())
+                        else accumulator.startArray()
+                    }
 
-                is StructureKind.MAP -> {
-                    if (cbor.writeDefiniteLengths) accumulator.startMap((numChildren / 2).toULong())
-                    else accumulator.startMap()
-                }
+                    is StructureKind.MAP -> {
+                        if (cbor.writeDefiniteLengths) accumulator.startMap((numChildren / 2).toULong())
+                        else accumulator.startMap()
+                    }
 
-                else -> {
-                    if (cbor.writeDefiniteLengths) accumulator.startMap((numChildren).toULong())
-                    else accumulator.startMap()
+                    else -> {
+                        if (cbor.writeDefiniteLengths) accumulator.startMap((numChildren).toULong())
+                        else accumulator.startMap()
+                    }
                 }
             }
+            accumulator.copyFrom(completedCurrent.bytes)
         }
-        accumulator.copyFrom(completedCurrent.bytes)
+        else completedCurrent.bytes.end()
     }
 
 
