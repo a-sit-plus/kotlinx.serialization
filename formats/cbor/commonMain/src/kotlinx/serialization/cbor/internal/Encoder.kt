@@ -216,23 +216,17 @@ internal open class CborWriter(
 private fun ByteArrayOutput.startArray() = write(BEGIN_ARRAY)
 
 private fun ByteArrayOutput.startArray(size: ULong) {
-    val encodedNumber = composePositive(size)
-    encodedNumber[0] = encodedNumber[0] or HEADER_ARRAY.toUByte().toByte()
-    encodedNumber.forEach { this.writeByte(it.toUByte().toInt()) }
+ composePositiveInline(size,HEADER_ARRAY)
 }
 
 private fun ByteArrayOutput.startMap() = write(BEGIN_MAP)
 
 private fun ByteArrayOutput.startMap(size: ULong) {
-    val encodedNumber = composePositive(size)
-    encodedNumber[0] = encodedNumber[0] or HEADER_MAP.toUByte().toByte()
-    encodedNumber.forEach { this.writeByte(it.toUByte().toInt()) }
+  composePositiveInline(size, HEADER_MAP)
 }
 
 private fun ByteArrayOutput.encodeTag(tag: ULong) {
-    val encodedTag = composePositive(tag)
-    encodedTag[0] = encodedTag[0] or HEADER_TAG.toUByte().toByte()
-    encodedTag.forEach { this.writeByte(it.toUByte().toInt()) }
+    composePositiveInline(tag, HEADER_TAG)
 }
 
 internal fun ByteArrayOutput.end() = write(BREAK)
@@ -285,12 +279,33 @@ internal fun ByteArrayOutput.encodeDouble(value: Double) {
 private fun composeNumber(value: Long): ByteArray =
     if (value >= 0) composePositive(value.toULong()) else composeNegative(value)
 
+private fun ByteArrayOutput.composePositiveInline(value: ULong, mod: Int) = when (value) {
+    in 0u..23u -> writeByte(value.toInt() or mod)
+    in 24u..UByte.MAX_VALUE.toUInt() -> {
+        writeByte(24 or mod)
+        writeByte(value.toInt())
+    }
+    in (UByte.MAX_VALUE.toUInt() + 1u)..UShort.MAX_VALUE.toUInt() -> encodeToInline(value, 2, 25 or mod)
+    in (UShort.MAX_VALUE.toUInt() + 1u)..UInt.MAX_VALUE -> encodeToInline(value, 4, 26 or mod )
+    else -> encodeToInline(value, 8, 27 or mod)
+}
+
+
 private fun composePositive(value: ULong): ByteArray = when (value) {
     in 0u..23u -> byteArrayOf(value.toByte())
     in 24u..UByte.MAX_VALUE.toUInt() -> byteArrayOf(24, value.toByte())
     in (UByte.MAX_VALUE.toUInt() + 1u)..UShort.MAX_VALUE.toUInt() -> encodeToByteArray(value, 2, 25)
     in (UShort.MAX_VALUE.toUInt() + 1u)..UInt.MAX_VALUE -> encodeToByteArray(value, 4, 26)
     else -> encodeToByteArray(value, 8, 27)
+}
+
+
+private fun ByteArrayOutput.encodeToInline(value: ULong, bytes: Int, tag: Int) {
+    val limit = bytes * 8 - 8
+    writeByte(tag)
+    for (i in 0 until bytes) {
+        writeByte (((value shr (limit - 8 * i)) and 0xFFu).toInt())
+    }
 }
 
 private fun encodeToByteArray(value: ULong, bytes: Int, tag: Byte): ByteArray {
