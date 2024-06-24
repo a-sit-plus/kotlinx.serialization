@@ -1,0 +1,132 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-cbor/1.7.2-SNAPSHOT/kotlinx-serialization-cbor-1.7.2-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-cbor",
+    "version": "1.7.2-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.7"
+    }
+  },
+  "variants": [
+    {
+      "name": "watchosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.7.2-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-cbor.klib",
+          "url": "kotlinx-serialization-cbor-watchosarm64-1.7.2-SNAPSHOT.klib",
+          "size": 93885,
+          "sha512": "cd4b2e9b9bbb3aa8a60c56fca69f646bfb2834abdb86bd80f0f01f217cbd49c577ae206623044a206abb510b29d059eec43264b7997217ec4b84dea8d1440ecf",
+          "sha256": "af5583d92af4448ff8a13635061809b4b394570c45ce061a59ab8ca9972cd6c4",
+          "sha1": "cc535ec6b0172f8ccea1f09ba2a2155ffa3e29f0",
+          "md5": "3b4424ff54597659e6b94eee41c9c828"
+        }
+      ]
+    },
+    {
+      "name": "watchosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-cbor-watchosarm64-1.7.2-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-cbor-watchosarm64-1.7.2-SNAPSHOT-sources.jar",
+          "size": 19425,
+          "sha512": "ffb1f6d8a03d975913e47a3b3294ac160b40497e9dc09c1851d8153136829678891b8f25e853f026c5bba13bd1cf683d32bb856d2cb5cfcc910d9fa59fb59558",
+          "sha256": "c137c04407f379f0a1bfc3b98b5a5aa8b7dfbce5017e369b6613340b58a49e50",
+          "sha1": "c0245c967deffe9275fd9240d005f1788f7597d4",
+          "md5": "d2ffde2434a3f49dbe0c66fcd21a4768"
+        }
+      ]
+    },
+    {
+      "name": "watchosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.7.2-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-cbor-watchosarm64-1.7.2-SNAPSHOT-metadata.jar",
+          "url": "kotlinx-serialization-cbor-watchosarm64-1.7.2-SNAPSHOT-metadata.jar",
+          "size": 261,
+          "sha512": "bd95f075c7c90342f18d765ff1aa62b701f977b629d0c913eed13f80f3a0e8471ba109da9a8da59b0bc3e8e95f9fe8d83c69da66ba573171e2f1af67f0601f05",
+          "sha256": "cc2a33efdc69d4b42c2924685a053b230c47a107f334d8404f78d099e67b2b79",
+          "sha1": "4e121543f5f69ff13094e628dae655453f9425b9",
+          "md5": "e56d412215a7b6a05d6860fb7db472cb"
+        }
+      ]
+    }
+  ]
+}

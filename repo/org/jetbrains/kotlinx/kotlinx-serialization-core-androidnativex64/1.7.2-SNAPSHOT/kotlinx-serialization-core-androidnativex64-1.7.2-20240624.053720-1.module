@@ -1,0 +1,80 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-core/1.7.2-SNAPSHOT/kotlinx-serialization-core-1.7.2-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-core",
+    "version": "1.7.2-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.7"
+    }
+  },
+  "variants": [
+    {
+      "name": "androidNativeX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-core.klib",
+          "url": "kotlinx-serialization-core-androidnativex64-1.7.2-SNAPSHOT.klib",
+          "size": 325634,
+          "sha512": "e18e4d4b0be692f5396b4c90f68241cdb5bd838c243d88a5aede0ec9f53b480312305fcce091e30d209c28de5fbee16560696c6fa355692dc8a5e82976379263",
+          "sha256": "f46d9c18c07fb0da9eccf594edb9a6edad6eeca1d2083777222ddaf24d795a96",
+          "sha1": "26754986571d5297bb7a6bd3bd608c5cb3bb1edc",
+          "md5": "249573797987117ce1910aa8c1aa81d3"
+        }
+      ]
+    },
+    {
+      "name": "androidNativeX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-core-androidnativex64-1.7.2-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-core-androidnativex64-1.7.2-SNAPSHOT-sources.jar",
+          "size": 100345,
+          "sha512": "869512f66d16d8a09099e39b29da203802cf7d1779f3b8fbea2a6069da6e3bad475d4b60bfd5553c8e546cb97222ee78d97d92a4cd96ca1af1b362901e122346",
+          "sha256": "ab430185de994e88bf871f962f877b3e030ec35137beef0c2973f6dc0e14b55f",
+          "sha1": "171da31ef477424df6c88cc77940d3fa10617b32",
+          "md5": "afe36c66a49b324e693db0b6fa8612f7"
+        }
+      ]
+    }
+  ]
+}

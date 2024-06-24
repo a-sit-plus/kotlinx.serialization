@@ -3,10 +3,10 @@
   <groupId>org.jetbrains.kotlinx</groupId>
   <artifactId>kotlinx-serialization-json-watchosarm32</artifactId>
   <versioning>
-    <latest>1.7.1-SNAPSHOT</latest>
+    <latest>1.7.2-SNAPSHOT</latest>
     <versions>
-      <version>1.7.1-SNAPSHOT</version>
+      <version>1.7.2-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20240607191613</lastUpdated>
+    <lastUpdated>20240624054430</lastUpdated>
   </versioning>
 </metadata>

@@ -1,0 +1,130 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-core/1.7.2-SNAPSHOT/kotlinx-serialization-core-1.7.2-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-core",
+    "version": "1.7.2-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.7"
+    }
+  },
+  "variants": [
+    {
+      "name": "wasmWasiApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "wasi"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-wasm-wasi",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-core-wasm-wasi-1.7.2-SNAPSHOT.klib",
+          "url": "kotlinx-serialization-core-wasm-wasi-1.7.2-SNAPSHOT.klib",
+          "size": 322556,
+          "sha512": "0a40bcb0c0535bab35d24253b79b3b88e2257314b586fa3eb3d63666359278792de0970602e917f8a57246235a3d7244aac65550d3d65fc4e421336153b93349",
+          "sha256": "acfcb40c77e46d775c1c69a19759cd1f236b3fe908bf1b8f5407d395dfc3268c",
+          "sha1": "5596c19f161db4b0d4bd54bd38983292fe56c2c8",
+          "md5": "24bb4c493aadad07d31506c46cd30f97"
+        }
+      ]
+    },
+    {
+      "name": "wasmWasiRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "wasi"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-wasm-wasi",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-core-wasm-wasi-1.7.2-SNAPSHOT.klib",
+          "url": "kotlinx-serialization-core-wasm-wasi-1.7.2-SNAPSHOT.klib",
+          "size": 322556,
+          "sha512": "0a40bcb0c0535bab35d24253b79b3b88e2257314b586fa3eb3d63666359278792de0970602e917f8a57246235a3d7244aac65550d3d65fc4e421336153b93349",
+          "sha256": "acfcb40c77e46d775c1c69a19759cd1f236b3fe908bf1b8f5407d395dfc3268c",
+          "sha1": "5596c19f161db4b0d4bd54bd38983292fe56c2c8",
+          "md5": "24bb4c493aadad07d31506c46cd30f97"
+        }
+      ]
+    },
+    {
+      "name": "wasmWasiSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "wasi"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-core-wasm-wasi-1.7.2-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-core-wasm-wasi-1.7.2-SNAPSHOT-sources.jar",
+          "size": 100205,
+          "sha512": "43a58c86b1a0b408ee1fc543ae9e5a59d5b9ae27ded961c02ac84a2159a8cf4b2df1f40d67026c49a7c1e193fa0ef47fe4cdad11d0416323e34d95108e49daa9",
+          "sha256": "3b263ab28b2380e9bade9412871ac7949007e33e5abe266fc4e8dbaacbbbc8ae",
+          "sha1": "c6a77d386332130fec8f452b24d216858898d404",
+          "md5": "890ffd7c37ced224dccc05619fa12a66"
+        }
+      ]
+    }
+  ]
+}

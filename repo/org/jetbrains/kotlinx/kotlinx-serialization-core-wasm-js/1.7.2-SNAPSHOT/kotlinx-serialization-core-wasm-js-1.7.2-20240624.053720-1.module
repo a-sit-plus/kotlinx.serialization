@@ -1,0 +1,130 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-core/1.7.2-SNAPSHOT/kotlinx-serialization-core-1.7.2-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-core",
+    "version": "1.7.2-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.7"
+    }
+  },
+  "variants": [
+    {
+      "name": "wasmJsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-wasm-js",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-core-wasm-js-1.7.2-SNAPSHOT.klib",
+          "url": "kotlinx-serialization-core-wasm-js-1.7.2-SNAPSHOT.klib",
+          "size": 322552,
+          "sha512": "216cd2509c2d8abe287e9cf0da695ba1fc9cca1f363e9e1ffa4b4dba84bf92fb1f2f6f3d48b1e0da716e98612e90f0fff98e251c4aa42e8842c4d216f9a0ec19",
+          "sha256": "0d4cd0bbb3a20c7f8f1e2aa9a4a5b74ab849c0dec03c3c9904a04f5ac19c395f",
+          "sha1": "409e008c7b276928510bb7e018bcc56ff905c589",
+          "md5": "561b64c99ba907cd4ffb8843a5e060e8"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-wasm-js",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-core-wasm-js-1.7.2-SNAPSHOT.klib",
+          "url": "kotlinx-serialization-core-wasm-js-1.7.2-SNAPSHOT.klib",
+          "size": 322552,
+          "sha512": "216cd2509c2d8abe287e9cf0da695ba1fc9cca1f363e9e1ffa4b4dba84bf92fb1f2f6f3d48b1e0da716e98612e90f0fff98e251c4aa42e8842c4d216f9a0ec19",
+          "sha256": "0d4cd0bbb3a20c7f8f1e2aa9a4a5b74ab849c0dec03c3c9904a04f5ac19c395f",
+          "sha1": "409e008c7b276928510bb7e018bcc56ff905c589",
+          "md5": "561b64c99ba907cd4ffb8843a5e060e8"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-core-wasm-js-1.7.2-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-core-wasm-js-1.7.2-SNAPSHOT-sources.jar",
+          "size": 100205,
+          "sha512": "43a58c86b1a0b408ee1fc543ae9e5a59d5b9ae27ded961c02ac84a2159a8cf4b2df1f40d67026c49a7c1e193fa0ef47fe4cdad11d0416323e34d95108e49daa9",
+          "sha256": "3b263ab28b2380e9bade9412871ac7949007e33e5abe266fc4e8dbaacbbbc8ae",
+          "sha1": "c6a77d386332130fec8f452b24d216858898d404",
+          "md5": "890ffd7c37ced224dccc05619fa12a66"
+        }
+      ]
+    }
+  ]
+}

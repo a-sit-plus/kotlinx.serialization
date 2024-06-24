@@ -1,0 +1,179 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-json-okio/1.7.2-SNAPSHOT/kotlinx-serialization-json-okio-1.7.2-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-json-okio",
+    "version": "1.7.2-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.7"
+    }
+  },
+  "variants": [
+    {
+      "name": "jsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-js",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-dom-api-compat",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.7.2-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.7.2-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-json-okio-js-1.7.2-SNAPSHOT.klib",
+          "url": "kotlinx-serialization-json-okio-js-1.7.2-SNAPSHOT.klib",
+          "size": 14856,
+          "sha512": "8e0dd74cacd8d0b7c520b1955617d5f280082b78f637208390701a401b41fd7647b9dcd91c8041733285f81f5649634a43f1b25e2b70362b05c67e73bf1dd044",
+          "sha256": "cdff3c7327046920b2ee68071027d54ed2d8c94c50a193b277148395ed65e395",
+          "sha1": "e4ee11443da9314d4597acf0740756ae7afb9e5c",
+          "md5": "4a577dd2fb5205cb2ecd28bbf95f2249"
+        }
+      ]
+    },
+    {
+      "name": "jsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-js",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-dom-api-compat",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.7.2-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.7.2-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "com.squareup.okio",
+          "module": "okio",
+          "version": {
+            "requires": "3.9.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-json-okio-js-1.7.2-SNAPSHOT.klib",
+          "url": "kotlinx-serialization-json-okio-js-1.7.2-SNAPSHOT.klib",
+          "size": 14856,
+          "sha512": "8e0dd74cacd8d0b7c520b1955617d5f280082b78f637208390701a401b41fd7647b9dcd91c8041733285f81f5649634a43f1b25e2b70362b05c67e73bf1dd044",
+          "sha256": "cdff3c7327046920b2ee68071027d54ed2d8c94c50a193b277148395ed65e395",
+          "sha1": "e4ee11443da9314d4597acf0740756ae7afb9e5c",
+          "md5": "4a577dd2fb5205cb2ecd28bbf95f2249"
+        }
+      ]
+    },
+    {
+      "name": "jsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-json-okio-js-1.7.2-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-json-okio-js-1.7.2-SNAPSHOT-sources.jar",
+          "size": 4356,
+          "sha512": "55144ba96d1e9c232694de7d01f6acf19237125048cef3dd7fc474479a27ed8018a416990080a976f8dee57bb4a7bc4eb65b144f2428ee8f3863cecd52d3c669",
+          "sha256": "7e663f91e65ee8fcc7445f525968dac33967ca0ab10d385971c69cad9230fb64",
+          "sha1": "979622aac10b92f661a3a081ee3618ad989734f2",
+          "md5": "95d88152c64308c2b2a586d3bbb181e3"
+        }
+      ]
+    }
+  ]
+}

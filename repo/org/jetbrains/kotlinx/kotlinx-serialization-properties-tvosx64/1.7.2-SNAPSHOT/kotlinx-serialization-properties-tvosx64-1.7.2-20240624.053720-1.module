@@ -1,0 +1,132 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-properties/1.7.2-SNAPSHOT/kotlinx-serialization-properties-1.7.2-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-properties",
+    "version": "1.7.2-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.7"
+    }
+  },
+  "variants": [
+    {
+      "name": "tvosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "tvos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.7.2-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-properties.klib",
+          "url": "kotlinx-serialization-properties-tvosx64-1.7.2-SNAPSHOT.klib",
+          "size": 18753,
+          "sha512": "6a80f76a31fc8bc67688a64f028ea127d429f4a623e3b5ee12d0e913d82e62b8990b4549ed759997d12d00bee1237ee022b7e93e6b70d453edaf86d5b346773a",
+          "sha256": "e3c21c0a52ec40a1fe6041967329687e94c6b314a349c6487fd053fdf8d35ce2",
+          "sha1": "b8194406f6b6fab5ec6e7f3768224df172ab7ce8",
+          "md5": "026165e73c1c03ac5497aa7e75adcee0"
+        }
+      ]
+    },
+    {
+      "name": "tvosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "tvos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-properties-tvosx64-1.7.2-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-properties-tvosx64-1.7.2-SNAPSHOT-sources.jar",
+          "size": 3692,
+          "sha512": "59ddd7439185a552035f7e09e3bad84e212673bb218ba42b003ad79be221ffa9a231f4738de5eeb9a7a9955fcb9869ddd72958896104f6c7654afda9dfa4eecd",
+          "sha256": "f0edaa0a99e24d8a9953ea734b3eb78428ec949dd568e1eb7125e604e6714831",
+          "sha1": "0f16141a0888abd29bba2d9cd82aa4230daa7275",
+          "md5": "1f1a044c083221b07767f71927933221"
+        }
+      ]
+    },
+    {
+      "name": "tvosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "tvos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.7.2-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-properties-tvosx64-1.7.2-SNAPSHOT-metadata.jar",
+          "url": "kotlinx-serialization-properties-tvosx64-1.7.2-SNAPSHOT-metadata.jar",
+          "size": 261,
+          "sha512": "5a916f2452703d96cdc547c9bc35eb091defcf9ab968e255cf075ef3cc2e47b1bc8a36a78f8cc4bc102aec4a9b11182f555194d1dc872ce0e8b028db6df50c52",
+          "sha256": "6a2023fdd7ec1e58006592cc44df306777c47c03ab9d676f8d84ef9cb2877659",
+          "sha1": "13ddfa07fef84034933602c951ad8074f23a6631",
+          "md5": "6434ab852e068a4a785e3aa491e2fe43"
+        }
+      ]
+    }
+  ]
+}

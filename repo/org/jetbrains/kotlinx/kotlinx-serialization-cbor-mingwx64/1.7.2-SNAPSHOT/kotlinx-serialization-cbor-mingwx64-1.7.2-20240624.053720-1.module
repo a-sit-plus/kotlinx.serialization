@@ -1,0 +1,87 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-cbor/1.7.2-SNAPSHOT/kotlinx-serialization-cbor-1.7.2-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-cbor",
+    "version": "1.7.2-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.7"
+    }
+  },
+  "variants": [
+    {
+      "name": "mingwX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "mingw_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.7.2-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-cbor.klib",
+          "url": "kotlinx-serialization-cbor-mingwx64-1.7.2-SNAPSHOT.klib",
+          "size": 93852,
+          "sha512": "288a392c11caccb16d6ae2a8b91706119606a5f21e9bcbbb539655ab7b07a37ce3774173498e9c6d4a35af27150120dbc3440e0135f96c13f1ac24e396f76822",
+          "sha256": "edcf330e456dbb24a977e2b2346da4de7eaaf11f795d4c17840805971755f059",
+          "sha1": "2bfd4167a1f1f2c86fa97ba39ac2835406dfd6a6",
+          "md5": "716f713af020a116398fc9b233457e49"
+        }
+      ]
+    },
+    {
+      "name": "mingwX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "mingw_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-cbor-mingwx64-1.7.2-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-cbor-mingwx64-1.7.2-SNAPSHOT-sources.jar",
+          "size": 19425,
+          "sha512": "ffb1f6d8a03d975913e47a3b3294ac160b40497e9dc09c1851d8153136829678891b8f25e853f026c5bba13bd1cf683d32bb856d2cb5cfcc910d9fa59fb59558",
+          "sha256": "c137c04407f379f0a1bfc3b98b5a5aa8b7dfbce5017e369b6613340b58a49e50",
+          "sha1": "c0245c967deffe9275fd9240d005f1788f7597d4",
+          "md5": "d2ffde2434a3f49dbe0c66fcd21a4768"
+        }
+      ]
+    }
+  ]
+}

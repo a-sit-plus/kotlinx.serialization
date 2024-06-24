@@ -1,0 +1,132 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-properties/1.7.2-SNAPSHOT/kotlinx-serialization-properties-1.7.2-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-properties",
+    "version": "1.7.2-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.7"
+    }
+  },
+  "variants": [
+    {
+      "name": "watchosArm32ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.7.2-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-properties.klib",
+          "url": "kotlinx-serialization-properties-watchosarm32-1.7.2-SNAPSHOT.klib",
+          "size": 18797,
+          "sha512": "b29dc67252b7e94ee634a873cdc090b01b56adeacc19d22713671978c360b12d8d8f1223659d993abc9c4737d3f6d9b5991136ced3f68422f889cf7e46542f71",
+          "sha256": "85de80634bc0c97f94b690efa8eceff08274cb0b999126ed7469f3f9ef847bec",
+          "sha1": "904046dad8dfa142f6a330f433ea302b834731a9",
+          "md5": "5dd5ac2619ac9211d5fcbc9a060b88fc"
+        }
+      ]
+    },
+    {
+      "name": "watchosArm32SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-properties-watchosarm32-1.7.2-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-properties-watchosarm32-1.7.2-SNAPSHOT-sources.jar",
+          "size": 3692,
+          "sha512": "59ddd7439185a552035f7e09e3bad84e212673bb218ba42b003ad79be221ffa9a231f4738de5eeb9a7a9955fcb9869ddd72958896104f6c7654afda9dfa4eecd",
+          "sha256": "f0edaa0a99e24d8a9953ea734b3eb78428ec949dd568e1eb7125e604e6714831",
+          "sha1": "0f16141a0888abd29bba2d9cd82aa4230daa7275",
+          "md5": "1f1a044c083221b07767f71927933221"
+        }
+      ]
+    },
+    {
+      "name": "watchosArm32MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.7.2-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-properties-watchosarm32-1.7.2-SNAPSHOT-metadata.jar",
+          "url": "kotlinx-serialization-properties-watchosarm32-1.7.2-SNAPSHOT-metadata.jar",
+          "size": 261,
+          "sha512": "8c97354d258bf5aec9a3587848dcdfcae026dbc6667a1170f6928bcc260cb9150ebeb4e191ae52907aa0372437d379bdd2a9259ca4dc4cfa0e4ddb8534cde208",
+          "sha256": "4b88d862332ce6e1b1b1c4538eb740831bff698cd91a8bc34fe0ab994e7ea389",
+          "sha1": "2e338f3d2d5fcae8f162ffe32b48ab4785adf100",
+          "md5": "b53138509bb737ad725866a7b864df74"
+        }
+      ]
+    }
+  ]
+}

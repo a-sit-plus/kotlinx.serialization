@@ -1,0 +1,160 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-json-okio/1.7.2-SNAPSHOT/kotlinx-serialization-json-okio-1.7.2-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-json-okio",
+    "version": "1.7.2-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.7"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.7.2-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.7.2-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "com.squareup.okio",
+          "module": "okio",
+          "version": {
+            "requires": "3.9.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-json-okio.klib",
+          "url": "kotlinx-serialization-json-okio-iosx64-1.7.2-SNAPSHOT.klib",
+          "size": 15921,
+          "sha512": "8ed4201aa8ab2f55b507ae60fba5e77d4257768defbd4730bd72886d5f9d15ff150e04cff6a872232a3b580370e697016d8adc892029624146ce78621eaeb3a5",
+          "sha256": "238c32b3a9e207c4828b70a936f54bffaf10f3f1140682eba262f04fdd25a254",
+          "sha1": "2716eb767b20a167971a94afd7ded7943c5ec777",
+          "md5": "df99ea93234b9aadc1831e64f89a0e2a"
+        }
+      ]
+    },
+    {
+      "name": "iosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-json-okio-iosx64-1.7.2-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-json-okio-iosx64-1.7.2-SNAPSHOT-sources.jar",
+          "size": 4356,
+          "sha512": "55144ba96d1e9c232694de7d01f6acf19237125048cef3dd7fc474479a27ed8018a416990080a976f8dee57bb4a7bc4eb65b144f2428ee8f3863cecd52d3c669",
+          "sha256": "7e663f91e65ee8fcc7445f525968dac33967ca0ab10d385971c69cad9230fb64",
+          "sha1": "979622aac10b92f661a3a081ee3618ad989734f2",
+          "md5": "95d88152c64308c2b2a586d3bbb181e3"
+        }
+      ]
+    },
+    {
+      "name": "iosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.7.2-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.7.2-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "com.squareup.okio",
+          "module": "okio",
+          "version": {
+            "requires": "3.9.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-json-okio-iosx64-1.7.2-SNAPSHOT-metadata.jar",
+          "url": "kotlinx-serialization-json-okio-iosx64-1.7.2-SNAPSHOT-metadata.jar",
+          "size": 261,
+          "sha512": "9fd9b960a9280acec6ecda92a26b710abc605d39057edbe8cc7b3fa56f93e39515f45f3902bf26b6e9e336c2d0e21c5425ec1603b6b63c73e7ede43bc97c938f",
+          "sha256": "7f663bcbf6e2baf018b5fbdc25d60759a414dc218b41a5020e39006d6dd6d753",
+          "sha1": "4c8e20d0b778d19860e257fa1d15086fe3e19464",
+          "md5": "fa2adbb3f56629547753088981126e22"
+        }
+      ]
+    }
+  ]
+}
