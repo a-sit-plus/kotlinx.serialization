@@ -92,6 +92,10 @@ val testRepositoryDir = project.layout.buildDirectory.dir("testRepository")
 
 publishing {
     repositories {
+        maven {
+            url = java.io.File(rootProject.projectDir.absolutePath + "/repo").toURI()
+            name = "local"
+        }
         addSonatypeRepository()
 
         /**
