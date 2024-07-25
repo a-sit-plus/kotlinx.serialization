@@ -1,0 +1,144 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-json/1.8.0-SNAPSHOT/kotlinx-serialization-json-1.8.0-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-json",
+    "version": "1.8.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.7"
+    }
+  },
+  "variants": [
+    {
+      "name": "wasmWasiApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "wasi"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-wasm-wasi",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.8.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-json-wasm-wasi-1.8.0-SNAPSHOT.klib",
+          "url": "kotlinx-serialization-json-wasm-wasi-1.8.0-SNAPSHOT.klib",
+          "size": 300639,
+          "sha512": "2d7655ae1a28a54189e052d6c6dbc97d10f64e5f1887ff6dff3e678c7c9ae294299c57321eb9b12160c49d250c5892f4b15cb9a8ef8e6a57c1d9e9435d931b01",
+          "sha256": "9350649419a060d4d7a950aa7aa1464cbe5471cacdeb9a9856e40334eb359902",
+          "sha1": "e5a5f34be74a74a1aa4fc538ade712da736bbd46",
+          "md5": "b2e8964c35f068f4d7fe16ea1e5d661b"
+        }
+      ]
+    },
+    {
+      "name": "wasmWasiRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "wasi"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-wasm-wasi",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.8.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-json-wasm-wasi-1.8.0-SNAPSHOT.klib",
+          "url": "kotlinx-serialization-json-wasm-wasi-1.8.0-SNAPSHOT.klib",
+          "size": 300639,
+          "sha512": "2d7655ae1a28a54189e052d6c6dbc97d10f64e5f1887ff6dff3e678c7c9ae294299c57321eb9b12160c49d250c5892f4b15cb9a8ef8e6a57c1d9e9435d931b01",
+          "sha256": "9350649419a060d4d7a950aa7aa1464cbe5471cacdeb9a9856e40334eb359902",
+          "sha1": "e5a5f34be74a74a1aa4fc538ade712da736bbd46",
+          "md5": "b2e8964c35f068f4d7fe16ea1e5d661b"
+        }
+      ]
+    },
+    {
+      "name": "wasmWasiSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "wasi"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-json-wasm-wasi-1.8.0-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-json-wasm-wasi-1.8.0-SNAPSHOT-sources.jar",
+          "size": 81430,
+          "sha512": "be88415b06b3b6a99129c2520e09bb62124efa621c53616c4898b107a6d7000115a12d3cf97c7200195c5a768883874598474b3f9787d72b7a8c78730fa4bfd3",
+          "sha256": "24e6318e8858e901e3cf9f59b759113f9179844a24f5c7cbbdd175272d1a0dad",
+          "sha1": "ca5238542cbd993a3bb010c5514b4f34649c6d61",
+          "md5": "66d406749431b89a4fbe1da88e6477a3"
+        }
+      ]
+    }
+  ]
+}

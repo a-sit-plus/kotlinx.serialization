@@ -1,0 +1,132 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-cbor/1.8.0-SNAPSHOT/kotlinx-serialization-cbor-1.8.0-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-cbor",
+    "version": "1.8.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.7"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.8.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-cbor.klib",
+          "url": "kotlinx-serialization-cbor-iosx64-1.8.0-SNAPSHOT.klib",
+          "size": 92950,
+          "sha512": "60b8e4bbbc3e6f37ee82146932ba055aede59ee4504965b44021220f4548d3be325813d74a65ed89bbae4dd96ba9da9a652d60d2229b98e3ec958fb077d1c899",
+          "sha256": "199d481486dcd59ade49fe8fcb7c296e2d1e9850be59bffc36512afbbdb8f078",
+          "sha1": "e1e4e58697626cf9aaa9b70e1fbbb294ddbb6886",
+          "md5": "44933a5ad97bdc55b3fc384ff8868fa3"
+        }
+      ]
+    },
+    {
+      "name": "iosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-cbor-iosx64-1.8.0-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-cbor-iosx64-1.8.0-SNAPSHOT-sources.jar",
+          "size": 24207,
+          "sha512": "a6886a8a2a294780b6a715f4c13d11d584f4ae35beb80ff81849498069ea80560cd9cd29f478a30059de5b0dea9402ee5251d762c11c55ad8970c6022debabaf",
+          "sha256": "02e95064eaebe90e7057626da1e41c2e5c710a8a28330df95dadff40e935c7ae",
+          "sha1": "0733d6423ca1ee3ee0d2dd7ce117432bba6491ed",
+          "md5": "d4b346b1845b2275ad3b2d6245f7cc24"
+        }
+      ]
+    },
+    {
+      "name": "iosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.8.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-cbor-iosx64-1.8.0-SNAPSHOT-metadata.jar",
+          "url": "kotlinx-serialization-cbor-iosx64-1.8.0-SNAPSHOT-metadata.jar",
+          "size": 261,
+          "sha512": "b73f44c0d7f5ca219e09a1029c5e28e878a5f1fc88c93e0a29ca8b87feef50a794d182ada82c00f9fd598de3c3577b8b3be41a7e1e773df0a44eff9ba5e67292",
+          "sha256": "36212886eb75d2ecdb97e17d35f4f347f1313fc04436f02ccab82b0aa72e8230",
+          "sha1": "fc68cac936b1b80cd16ad21161698f14bed19c53",
+          "md5": "12e7cd3410e91801065ee11f7b936b1e"
+        }
+      ]
+    }
+  ]
+}

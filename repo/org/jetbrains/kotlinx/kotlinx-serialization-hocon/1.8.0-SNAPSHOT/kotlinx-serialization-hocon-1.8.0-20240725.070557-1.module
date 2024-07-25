@@ -1,0 +1,146 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-hocon",
+    "version": "1.8.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.7"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.8.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "com.typesafe",
+          "module": "config",
+          "version": {
+            "requires": "1.4.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-bom",
+          "version": {
+            "requires": "1.8.0-SNAPSHOT"
+          },
+          "attributes": {
+            "org.gradle.category": "platform"
+          },
+          "endorseStrictVersions": true
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-hocon-1.8.0-SNAPSHOT.jar",
+          "url": "kotlinx-serialization-hocon-1.8.0-SNAPSHOT.jar",
+          "size": 56487,
+          "sha512": "cd99f3816b76f8e8162ee54b1b899e09fea43e927f2cf5060e9bb3e64697a1c6457da521512436b063663d4c18834415512eaa051fc007c4e697d27b0adba191",
+          "sha256": "004c11c38326fc2e3d161c882d14457d6dc9451fa5e41d5ebb376ce9c3982359",
+          "sha1": "0334dc23b0b61f45739a0b9c26a55c3fd1eaa47f",
+          "md5": "79e384e4b659c6b2bff74a112bcb080e"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.8.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "com.typesafe",
+          "module": "config",
+          "version": {
+            "requires": "1.4.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-bom",
+          "version": {
+            "requires": "1.8.0-SNAPSHOT"
+          },
+          "attributes": {
+            "org.gradle.category": "platform"
+          },
+          "endorseStrictVersions": true
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-hocon-1.8.0-SNAPSHOT.jar",
+          "url": "kotlinx-serialization-hocon-1.8.0-SNAPSHOT.jar",
+          "size": 56487,
+          "sha512": "cd99f3816b76f8e8162ee54b1b899e09fea43e927f2cf5060e9bb3e64697a1c6457da521512436b063663d4c18834415512eaa051fc007c4e697d27b0adba191",
+          "sha256": "004c11c38326fc2e3d161c882d14457d6dc9451fa5e41d5ebb376ce9c3982359",
+          "sha1": "0334dc23b0b61f45739a0b9c26a55c3fd1eaa47f",
+          "md5": "79e384e4b659c6b2bff74a112bcb080e"
+        }
+      ]
+    }
+  ]
+}

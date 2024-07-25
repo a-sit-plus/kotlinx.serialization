@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.jetbrains.kotlinx</groupId>
+  <artifactId>kotlinx-serialization-json-io-androidnativex86</artifactId>
+  <versioning>
+    <latest>1.8.0-SNAPSHOT</latest>
+    <versions>
+      <version>1.8.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20240725071216</lastUpdated>
+  </versioning>
+</metadata>

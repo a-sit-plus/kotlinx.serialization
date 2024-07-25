@@ -1,0 +1,132 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-protobuf/1.8.0-SNAPSHOT/kotlinx-serialization-protobuf-1.8.0-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-protobuf",
+    "version": "1.8.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.7"
+    }
+  },
+  "variants": [
+    {
+      "name": "tvosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.8.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-protobuf.klib",
+          "url": "kotlinx-serialization-protobuf-tvosarm64-1.8.0-SNAPSHOT.klib",
+          "size": 149331,
+          "sha512": "cdfdac2e74bb014815ba12e537248e472baaf63a4afdd9fe542a072fb2d9ce303b128b0121e8eaadafe83874beafe5477c495324bfcc09bb3a99a44c508e18a3",
+          "sha256": "66e9472d1ece04947cf7e678054523567c8b77095f84b3538b6cdbe953849408",
+          "sha1": "47d65c90300305152563b1777beb0d2548462990",
+          "md5": "b16c4b66df091e0965a7a4f9d63829c6"
+        }
+      ]
+    },
+    {
+      "name": "tvosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-protobuf-tvosarm64-1.8.0-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-protobuf-tvosarm64-1.8.0-SNAPSHOT-sources.jar",
+          "size": 32143,
+          "sha512": "5d0acd6f288db1c9f96e6c6537a67da702a13c5951afeb85edc7aaa92a0ca4519ae4231645b5694accb5312190b8a6974a56a09e4ab4c7998b0cd0b9a9b65cae",
+          "sha256": "1c0490bd839a1b04c1f78a80e1dc9912ec33bc933ca1ea0e55d2ca00f9922d6e",
+          "sha1": "25f8c3f1ef7a22eff21443d76cb39674c0a2687d",
+          "md5": "4adfe75163bb4373e0d30d84bf5230a8"
+        }
+      ]
+    },
+    {
+      "name": "tvosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.8.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-protobuf-tvosarm64-1.8.0-SNAPSHOT-metadata.jar",
+          "url": "kotlinx-serialization-protobuf-tvosarm64-1.8.0-SNAPSHOT-metadata.jar",
+          "size": 261,
+          "sha512": "a02b857b5d3978c08feccd042b3321e41938e254622abf3ed98c3036d4cbd84014fb7f6aed6644cec7f87b9e206dcbdbac1154193cdbbfea60ae141a1ec619ab",
+          "sha256": "818301bbe5f69e0ffa3944752387cde3159a12710939444490936b807c408425",
+          "sha1": "d1c0d6fa8ca8123c56507b631d21db7a3333ca72",
+          "md5": "52238731fee8d3fdb7ead8bb7c9f9277"
+        }
+      ]
+    }
+  ]
+}

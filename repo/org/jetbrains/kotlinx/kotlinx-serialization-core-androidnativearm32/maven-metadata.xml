@@ -3,10 +3,10 @@
   <groupId>org.jetbrains.kotlinx</groupId>
   <artifactId>kotlinx-serialization-core-androidnativearm32</artifactId>
   <versioning>
-    <latest>1.7.2-SNAPSHOT</latest>
+    <latest>1.8.0-SNAPSHOT</latest>
     <versions>
-      <version>1.7.2-SNAPSHOT</version>
+      <version>1.8.0-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20240624054400</lastUpdated>
+    <lastUpdated>20240725071204</lastUpdated>
   </versioning>
 </metadata>

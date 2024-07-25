@@ -1,0 +1,87 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-protobuf/1.8.0-SNAPSHOT/kotlinx-serialization-protobuf-1.8.0-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-protobuf",
+    "version": "1.8.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.7"
+    }
+  },
+  "variants": [
+    {
+      "name": "androidNativeArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.8.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-protobuf.klib",
+          "url": "kotlinx-serialization-protobuf-androidnativearm64-1.8.0-SNAPSHOT.klib",
+          "size": 149356,
+          "sha512": "1b1a76c5fbe1d23d1e8d11bc9ab16f4c1ed82e2da06fa7f0186368c094f6ce134a69ee8fe2c2338c8c84e97e2680bd17714899990d4fab657717738b3f3e3cd2",
+          "sha256": "a2c7e433df8eb0d6830f61e887d9fa5d5f64fd7df0f3ded11f82e51199170b88",
+          "sha1": "46ce4dc3c4ef2edb6144fe8c45aef974497dd195",
+          "md5": "9bc2955da4d13224538a91eabdb625bf"
+        }
+      ]
+    },
+    {
+      "name": "androidNativeArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-protobuf-androidnativearm64-1.8.0-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-protobuf-androidnativearm64-1.8.0-SNAPSHOT-sources.jar",
+          "size": 32143,
+          "sha512": "5d0acd6f288db1c9f96e6c6537a67da702a13c5951afeb85edc7aaa92a0ca4519ae4231645b5694accb5312190b8a6974a56a09e4ab4c7998b0cd0b9a9b65cae",
+          "sha256": "1c0490bd839a1b04c1f78a80e1dc9912ec33bc933ca1ea0e55d2ca00f9922d6e",
+          "sha1": "25f8c3f1ef7a22eff21443d76cb39674c0a2687d",
+          "md5": "4adfe75163bb4373e0d30d84bf5230a8"
+        }
+      ]
+    }
+  ]
+}

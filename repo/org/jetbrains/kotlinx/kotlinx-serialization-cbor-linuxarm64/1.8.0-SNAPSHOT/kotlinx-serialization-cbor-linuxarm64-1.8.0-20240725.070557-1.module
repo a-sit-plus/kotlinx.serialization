@@ -1,0 +1,87 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-serialization-cbor/1.8.0-SNAPSHOT/kotlinx-serialization-cbor-1.8.0-SNAPSHOT.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-serialization-cbor",
+    "version": "1.8.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.7"
+    }
+  },
+  "variants": [
+    {
+      "name": "linuxArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "linux_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core",
+          "version": {
+            "requires": "1.8.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-serialization-cbor.klib",
+          "url": "kotlinx-serialization-cbor-linuxarm64-1.8.0-SNAPSHOT.klib",
+          "size": 92984,
+          "sha512": "877db5d355dac0a1ba26e4f6a059b976c50ad732c3b3bd7d014f9aa0871c6cd257449a00e2bd2b923207cf52732301492d3db8c552ba63d13d166cfb374a1670",
+          "sha256": "99185aba2b15dc380cc8bc1cc76c12dc34ff29a405a6e0a974c02a426efdb144",
+          "sha1": "47f5c4fabbf0f081f94b5e0aaa12e9504efcc566",
+          "md5": "68a38a22e67a40f08bb11d7e28442577"
+        }
+      ]
+    },
+    {
+      "name": "linuxArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "linux_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-serialization-cbor-linuxarm64-1.8.0-SNAPSHOT-sources.jar",
+          "url": "kotlinx-serialization-cbor-linuxarm64-1.8.0-SNAPSHOT-sources.jar",
+          "size": 24207,
+          "sha512": "a6886a8a2a294780b6a715f4c13d11d584f4ae35beb80ff81849498069ea80560cd9cd29f478a30059de5b0dea9402ee5251d762c11c55ad8970c6022debabaf",
+          "sha256": "02e95064eaebe90e7057626da1e41c2e5c710a8a28330df95dadff40e935c7ae",
+          "sha1": "0733d6423ca1ee3ee0d2dd7ce117432bba6491ed",
+          "md5": "d4b346b1845b2275ad3b2d6245f7cc24"
+        }
+      ]
+    }
+  ]
+}
